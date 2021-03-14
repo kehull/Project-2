@@ -7,8 +7,8 @@
 
 We intend to examine the relative safety of different parts of the state of California based on public data documenting earthquake and wildfire activity.
 
-(https://www.fire.ca.gov/incidents/ "Wildfire data courtesy of Fire.CA.gov")
-(https://earthquake.usgs.gov/earthquakes/search/ "Earthquake data courtesy of USGS.gov")
+![fire data](https://www.fire.ca.gov/incidents/ "Wildfire data courtesy of Fire.CA.gov")
+![earthquake data](https://earthquake.usgs.gov/earthquakes/search/ "Earthquake data courtesy of USGS.gov")
 _There are no good views of metadata to screencap, unfortunately._
 
 ## Inspiring Visualizations ##
@@ -19,6 +19,6 @@ _There are no good views of metadata to screencap, unfortunately._
 ## Sketch of initial app design ##
 ![sketch](PrepWork\Project2Sketch.png)
 
-Repository can be found (https://github.com/kehull/Project-2 "here").
+Repository can be found ![repo link](https://github.com/kehull/Project-2 "here").
 
 
