@@ -15,7 +15,7 @@ As we'll be working with datestamped geoJSON data, we intend to use timeline and
 ![horizontal bar chart](https://d3ugvbs94d921r.cloudfront.net/5543920cc9a61d4f2a46e6be.png?t=143271af4dfba94)  
 
 ## Sketch of initial app design ##
-[sketch](Project2Sketch.png)  
+![sketch](Project2Sketch.png)  
 
 Repository can be found [here](https://github.com/kehull/Project-2).  
 
