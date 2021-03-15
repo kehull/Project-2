@@ -1,6 +1,8 @@
 # Dependencies
 import requests
 import json
+import pandas as pd
+
 
 # Target data
 startdate = "2013-01-01"
@@ -18,5 +20,31 @@ target_url = ('https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&s
 # Request the data
 geo_data = requests.get(target_url).json()
 
-# Print the json
-print(json.dumps(geo_data, indent=4, sort_keys=True))
+# # Print the json
+# print(json.dumps(geo_data, indent=4, sort_keys=True))
+
+# build columns of dataframe
+place = []
+mag = []
+lat = []
+lon = []
+depth = []
+
+# populate columns
+for response in geo_data['features']:
+    place.append(response['place'])
+    mag.append(response['mag'])
+    lat.append(response['geometry']['coordinates'][1])
+    lon.append(response['geometry']['coordinates'][0])
+    depth.append(response['geometry']['coordinates'][2])
+
+# build dataframe
+earthquake_df = pd.DataFrame({
+    "place": place,
+    "magnitude": mag,
+    "latitude": lat,
+    "longitude": lon,
+    "depth": depth
+})
+
+earthquake_df.head()
