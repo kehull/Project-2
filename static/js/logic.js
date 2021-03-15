@@ -21,7 +21,7 @@ L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // var limit = "&$limit=10000";
 
 // Assemble API query URL
-var url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2013-01-01&endtime=2021-03-12&minmagnitude=5&minlatitude=32.30&minlongitude=-114.8&maxlatitude=42&maxlongitude=-124.24'
+var url = 'https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=2013-01-01&endtime=2021-03-12&minmagnitude=5'
 
 // Grab the data with d3
 d3.json(url, function(response) {
@@ -30,17 +30,17 @@ d3.json(url, function(response) {
   var markers = L.markerClusterGroup();
 
   // Loop through data
-  for (var i = 0; i < response.length; i++) {
+  for (var i = 0; i < response['features'].length; i++) {
 
     // Set the data location property to a variable
-    var location = response[i].location;
+    var location = response['features'][i]['geometry'];
 
     // Check for location property
     if (location) {
 
       // Add a new marker to the cluster group and bind a pop-up
       markers.addLayer(L.marker([location.coordinates[1], location.coordinates[0]])
-        .bindPopup(response[i].descriptor));
+        .bindPopup(response['features'][i]['place']));
     }
 
   }
