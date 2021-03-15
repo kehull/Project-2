@@ -167,6 +167,10 @@ a.article:hover {
 .heading{
     padding-top:25px;
 }
+.fheading {
+    padding-bottom: 10px;
+
+}
 /* ---------------------------------------------------
     MEDIAQUERIES
 ----------------------------------------------------- */
