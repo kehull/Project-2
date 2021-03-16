@@ -33,14 +33,14 @@ d3.json(url, function(response) {
   for (var i = 0; i < response['features'].length; i++) {
 
     // Set the data location property to a variable
-    var location = response['features'][i]['geometry'];
+    var location = response['features']['properties'][i]['geometry'];
 
     // Check for location property
     if (location) {
 
       // Add a new marker to the cluster group and bind a pop-up
-      markers.addLayer(L.marker([location.coordinates[1], location.coordinates[0]])
-        .bindPopup(response['features'][i]['place']));
+      markers.addLayer(L.marker([location['coordinates'][1], location['coordinates'][0]])
+        .bindPopup(response['features']['properties'][i]['place']));
     }
 
   }
