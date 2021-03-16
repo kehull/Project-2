@@ -35,14 +35,14 @@ strSuffix2 = "CA"
 for response in geo_data['features']:
     if (response['properties']['place'].endswith(strSuffix1) | response['properties']['place'].endswith(strSuffix2)):
         place.append(response['properties']['place'])
+        time.append(response['properties']['time'])
         mag.append(response['properties']['mag'])
         lat.append(response['geometry']['coordinates'][1])
         lon.append(response['geometry']['coordinates'][0])
         depth.append(response['geometry']['coordinates'][2])
-
         # utcSeconds = response['properties']['time']
         # timeStamp = dt.datetime.fromtimestamp(utcSeconds).strftime('%c')
-        time.append(response['properties']['time'])
+        # time.append(response['properties']['time'])
 
 # build dataframe
 earthquake_df = pd.DataFrame({
@@ -55,3 +55,5 @@ earthquake_df = pd.DataFrame({
 })
 
 print(earthquake_df)
+
+earthquake_df.to_csv('data/California_EarthQuake.csv', index=False)
