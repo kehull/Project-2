@@ -30,3 +30,16 @@ COPY EARTHQUAKES(place, time, magnitude, latitude, depth)
 FROM 'California_EarthQuake.csv'
 DELIMITER ','
 CSV HEADER;
+
+CREATE TABLE IF NOT EXISTS COUNTIES (
+	id NUMERIC UNIQUE NOT NULL,
+	county VARCHAR,
+	city VARCHAR,
+	polygon VARCHAR,
+	PRIMARY KEY(id)
+);
+
+COPY COUNTIES(county, city, polygon)
+FROM 'County_Boundaries.csv'
+DELIMITER ','
+CSV HEADER;
