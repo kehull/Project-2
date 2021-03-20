@@ -59,16 +59,16 @@ function filterData() {
   d3.event.preventDefault();
 
   // Select the input element and get the raw HTML node
-  var inputElement_startdate = d3.select("#datetime");
-  var inputElement_enddate = d3.select("#city");
-  var inputElement_excludeFire = d3.select("#state");
-  var inputElement_excludeEarthquake = d3.select("#country");
+  var inputElement_startdate = d3.select("#startdate");
+  var inputElement_enddate = d3.select("#enddate");
+  var inputElement_excludeFire = d3.select("#fireform");
+  var inputElement_excludeEarthquake = d3.select("#earthquake");
 
   // Get the value property of the input element
   var inputValue_start = inputElement_startdate.property("value");
   var inputValue_end = inputElement_enddate.property("value");
   var inputValue_fire = inputElement_excludeFire.property("value");
-  var inputValue_earchquake = inputElement_excludeEarthquake.property("value");
+  var inputValue_earthquake = inputElement_excludeEarthquake.property("value");
 
   var filteredFire = fireData
   var filteredEarthquake = earthquakeData
@@ -95,7 +95,7 @@ function filterData() {
     filteredFire = filteredFire.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
   };
 
-  if (inputValue_earchquake == null && inputValue_earchquake == '') {
+  if (inputValue_earthquake == null && inputValue_earthquake == '') {
     filteredEarthquake = filteredEarthquake.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
   };
 
@@ -113,3 +113,37 @@ function filterData() {
 
 
 // CREATE BAR CHART _____________________________________________________________________________
+function plotBarChart(){
+  // get data
+  [filteredFire, filteredEarthquake] = filteredData()
+  [counties, points] = dangerPoints(filteredFire, filteredEarthquake)
+
+  var trace1 = {
+    x: counties,
+    y: points,
+    type: "bar"
+  };
+
+  var data = [trace1];
+
+  var layout = {
+    title: "'Bar' Chart"
+  };
+
+  Plotly.newPlot("chartid", data, layout);
+};
+
+
+// FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
+function updateVisualizations{
+  // Update Fire Map
+  
+  // Update Earthquake Map
+
+  // Update Bar Chart
+  plotBarChart()
+};
+
+// CALL THE FUNCTIONS _____________________________________________________________________________
+button.on("click", updateVisualizations);
+form.on("submit",updateVisualizations);
