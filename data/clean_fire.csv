@@ -1,41 +1,41 @@
 incident_name,county,acres_burned,longitude,latitude,incident_type,date_extinguished,date_created
-Pala Fire,San Diego,122.0,1.0,1.0,Wildfire,5/25/2009,5/24/2009
-Sand Fire,"Amador, El Dorado",4240.0,-120.7819,38.5691,Wildfire,8/2/2014,7/25/2014
-Atlas Fire (Southern LNU Complex),"Napa, Solano",51624.0,-122.24367,38.39206,Wildfire,2/9/2018,10/8/2017
-Tubbs Fire (Central LNU Complex),"Napa, Sonoma",36807.0,-122.62879,38.60895,Wildfire,2/9/2018,10/8/2017
-Nuns / Adobe / Norrbom/ Pressley / Partrick Fires / Oakmont (Central LNU Complex),"Napa, Sonoma",56556.0,-122.5209,38.4041,Wildfire,2/9/2018,10/8/2017
-Cascade Fire (Wind Complex),Yuba,9989.0,-121.4021,39.321979999999996,Wildfire,2/9/2018,10/8/2017
-Redwood Valley Fire (Mendocino Lake Complex),Mendocino,36523.0,-123.16635,39.24873,Wildfire,2/9/2018,10/8/2017
-Lobo Fire (Wind Complex),Nevada,821.0,-121.12791999999999,39.245490000000004,Wildfire,2/9/2018,10/9/2017
-Thomas Fire,"Santa Barbara, Ventura",281893.0,-119.09123999999998,34.415209999999995,Wildfire,1/12/2018,12/4/2017
-Drum Fire,Santa Barbara,14.0,-120.27077,34.71796,Wildfire,1/9/2018,12/16/2017
-Coast Fire,Santa Barbara,14.0,-120.414875,34.605358,Wildfire,1/9/2018,12/14/2017
-Riverbottom Fire,Riverside,45.0,-117.38417,33.9885,Wildfire,1/9/2018,12/21/2017
-Holiday Fire,El Dorado,80.0,-119.61865,38.869036,Wildfire,1/9/2018,12/28/2017
-Grant Fire,Alameda,484.0,-121.57918000000001,37.75375,Wildfire,1/4/2019,5/30/2018
-Creek Fire,San Luis Obispo,10.0,-120.39295,35.05747,Wildfire,1/4/2019,6/21/2018
-Stoll Fire,Tehama,268.0,-122.27573999999998,40.18395,Wildfire,1/4/2019,6/23/2018
-Pawnee Fire,Lake,15185.0,-122.59848000000001,39.0674,Wildfire,1/4/2019,6/23/2018
-Horse Fire,Calaveras,80.0,-120.68902,37.95766,Wildfire,1/4/2019,6/24/2018
-Waverly Fire,San Joaquin,12300.0,-120.94548200000001,38.052054999999996,Wildfire,1/4/2019,6/29/2018
-Hyatt Fire,Lassen,441.0,-120.45053,40.316137,Wildfire,1/4/2019,6/27/2018
-County Fire,"Napa, Yolo",90288.0,-122.18183,38.80583,Wildfire,1/4/2019,6/30/2018
-West Fire,San Diego,504.0,-116.7311,32.833674,Wildfire,1/4/2019,7/6/2018
-Klamathon Fire,Siskiyou,38008.0,-122.534655,41.893332,Wildfire,1/4/2019,7/5/2018
-Irish Fire,Amador,825.0,-120.95408,38.42623,Wildfire,1/4/2019,7/6/2018
-Holiday Fire,Santa Barbara,113.0,-119.83138899999999,34.463889,Wildfire,1/4/2019,7/6/2018
-Spring 2 Fire,Lake,80.0,-122.59788999999999,39.06715,Wildfire,1/4/2019,7/9/2018
-Carder Fire,Lake,50.0,-122.86854,38.91152,Wildfire,1/4/2019,7/21/2018
-Carr Fire,"Shasta, Trinity",229651.0,-122.62357,40.65428,Wildfire,8/30/2018,7/23/2018
-Marsh Fire,Contra Costa,247.0,-121.85847,37.89612,Wildfire,1/4/2019,7/25/2018
-Wagner Fire,Mariposa,22.0,-120.0545,37.69965,Wildfire,1/4/2019,8/4/2018
-Ranch Fire (Mendocino Complex),"Colusa, Glenn, Lake, Mendocino",410203.0,-123.10336699999999,39.243283,Wildfire,1/4/2019,7/27/2018
-River Fire (Mendocino Complex),"Colusa, Lake, Mendocino",48920.0,-123.11971000000001,39.04786,Wildfire,1/4/2019,7/27/2018
-Steele Fire,Napa,135.0,-122.18353,38.51943,Wildfire,1/4/2019,7/28/2018
-Omega Fire,El Dorado,66.0,-121.03918,38.82128,Wildfire,1/4/2019,8/1/2018
-Holy Fire,Orange,23136.0,-117.52055,33.698879999999996,Wildfire,1/4/2019,8/6/2018
-Delta Fire,"Shasta, Trinity",63311.0,-122.43,40.9425,Wildfire,1/4/2019,9/5/2018
-Meyers Fire,El Dorado,12.0,-120.65671999999999,38.7448,Wildfire,1/4/2019,9/20/2018
+Pala Fire,San Diego,122.0,1.0,1.0,Wildfire,5/25/2009,7-25-2014
+Sand Fire,"Amador, El Dorado",4240.0,-120.7819,38.5691,Wildfire,8/2/2014,11-5-2019
+Atlas Fire (Southern LNU Complex),"Napa, Solano",51624.0,-122.24367,38.39206,Wildfire,2/9/2018,7-5-2019
+Tubbs Fire (Central LNU Complex),"Napa, Sonoma",36807.0,-122.62879,38.60895,Wildfire,2/9/2018,7-5-2019
+Nuns / Adobe / Norrbom/ Pressley / Partrick Fires / Oakmont (Central LNU Complex),"Napa, Sonoma",56556.0,-122.5209,38.4041,Wildfire,2/9/2018,7-5-2019
+Cascade Fire (Wind Complex),Yuba,9989.0,-121.4021,39.321979999999996,Wildfire,2/9/2018,7-9-2019
+Redwood Valley Fire (Mendocino Lake Complex),Mendocino,36523.0,-123.16635,39.24873,Wildfire,2/9/2018,7-12-2019
+Lobo Fire (Wind Complex),Nevada,821.0,-121.12791999999999,39.245490000000004,Wildfire,2/9/2018,7-14-2019
+Thomas Fire,"Santa Barbara, Ventura",281893.0,-119.09123999999998,34.415209999999995,Wildfire,1/12/2018,8-14-2019
+Drum Fire,Santa Barbara,14.0,-120.27077,34.71796,Wildfire,1/9/2018,8-31-2019
+Coast Fire,Santa Barbara,14.0,-120.414875,34.605358,Wildfire,1/9/2018,9-1-2019
+Riverbottom Fire,Riverside,45.0,-117.38417,33.9885,Wildfire,1/9/2018,9-1-2019
+Holiday Fire,El Dorado,80.0,-119.61865,38.869036,Wildfire,1/9/2018,9-2-2019
+Grant Fire,Alameda,484.0,-121.57918000000001,37.75375,Wildfire,1/4/2019,9-30-2019
+Creek Fire,San Luis Obispo,10.0,-120.39295,35.05747,Wildfire,1/4/2019,5-8-2020
+Stoll Fire,Tehama,268.0,-122.27573999999998,40.18395,Wildfire,1/4/2019,5-28-2020
+Pawnee Fire,Lake,15185.0,-122.59848000000001,39.0674,Wildfire,1/4/2019,6-2-2020
+Horse Fire,Calaveras,80.0,-120.68902,37.95766,Wildfire,1/4/2019,6-5-2020
+Waverly Fire,San Joaquin,12300.0,-120.94548200000001,38.052054999999996,Wildfire,1/4/2019,6-6-2020
+Hyatt Fire,Lassen,441.0,-120.45053,40.316137,Wildfire,1/4/2019,6-9-2020
+County Fire,"Napa, Yolo",90288.0,-122.18183,38.80583,Wildfire,1/4/2019,6-11-2020
+West Fire,San Diego,504.0,-116.7311,32.833674,Wildfire,1/4/2019,6-13-2020
+Klamathon Fire,Siskiyou,38008.0,-122.534655,41.893332,Wildfire,1/4/2019,6-16-2020
+Irish Fire,Amador,825.0,-120.95408,38.42623,Wildfire,1/4/2019,6-17-2020
+Holiday Fire,Santa Barbara,113.0,-119.83138899999999,34.463889,Wildfire,1/4/2019,6-17-2020
+Spring 2 Fire,Lake,80.0,-122.59788999999999,39.06715,Wildfire,1/4/2019,6-26-2020
+Carder Fire,Lake,50.0,-122.86854,38.91152,Wildfire,1/4/2019,7-13-2020
+Carr Fire,"Shasta, Trinity",229651.0,-122.62357,40.65428,Wildfire,8/30/2018,7-15-2020
+Marsh Fire,Contra Costa,247.0,-121.85847,37.89612,Wildfire,1/4/2019,7-20-2020
+Wagner Fire,Mariposa,22.0,-120.0545,37.69965,Wildfire,1/4/2019,7-24-2020
+Ranch Fire (Mendocino Complex),"Colusa, Glenn, Lake, Mendocino",410203.0,-123.10336699999999,39.243283,Wildfire,1/4/2019,7-26-2020
+River Fire (Mendocino Complex),"Colusa, Lake, Mendocino",48920.0,-123.11971000000001,39.04786,Wildfire,1/4/2019,7-27-2020
+Steele Fire,Napa,135.0,-122.18353,38.51943,Wildfire,1/4/2019,8-1-2020
+Omega Fire,El Dorado,66.0,-121.03918,38.82128,Wildfire,1/4/2019,8-2-2020
+Holy Fire,Orange,23136.0,-117.52055,33.698879999999996,Wildfire,1/4/2019,8-4-2020
+Delta Fire,"Shasta, Trinity",63311.0,-122.43,40.9425,Wildfire,1/4/2019,9-1-2020
+Meyers Fire,El Dorado,12.0,-120.65671999999999,38.7448,Wildfire,1/4/2019,9-27-2020
 Camp Fire,Butte,153336.0,-121.4347,39.8134,Wildfire,11/25/2018,11/8/2018
 Hill Fire,Ventura,4531.0,-118.93444,34.22685,Wildfire,1/4/2019,11/8/2018
 Woolsey Fire,"Los Angeles, Ventura",96949.0,-118.70128000000001,34.235,Wildfire,1/4/2019,11/8/2018
