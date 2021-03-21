@@ -151,6 +151,7 @@ def one_date(start):
     
     
     if start in dates_list:
+        
         results_list=[]
         results=engine.execute(f"SELECT * FROM WILDFIRES WHERE date_created >= '{canonicalization}'")
         
