@@ -45,8 +45,8 @@ var button = d3.select("#filter");
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
-var fireData = d3.json('http://127.0.0.1:5000/api/v1.0/fire', data => data)
-var earthquakeData = d3.json('http://127.0.0.1:5000/api/v1.0/earthquake', data => data);
+var fireData = d3.json("http://127.0.0.1:5000/api/v1.0/fire", d => d['data'])
+var earthquakeData = d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", d => d['data']);
 
 // set filtered data to default values
 var filteredFire = fireData // add default values
