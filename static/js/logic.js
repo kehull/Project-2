@@ -110,7 +110,35 @@ function filterData() {
 
 
 // CREATE EARTHQUAKE MAP ________________________________________________________________________
+var earthMap = L.map("#mapid", {
+  center: [37.09, -95.71],
+  zoom: 3,
+});
 
+L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/streets-v11",
+  accessToken: API_KEY
+}).addTo(myMap);
+
+var url=ourAPIPath
+d3.json(url,function(response){
+  var heatArray=[];
+  
+  for (var i=0;i<response.length;i++){
+  var lat=response.data[i]["properties"]["lat"]
+  var lng=response.data[i]["properties"]["lng"]
+  heatArray.push([lng,lat])
+  }
+  var heat= L.heatLayer(heatArray,{
+    radius: 20,
+    blur:35
+  });
+
+});
 
 // CREATE BAR CHART _____________________________________________________________________________
 function plotBarChart(){
@@ -135,7 +163,7 @@ function plotBarChart(){
 
 
 // FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
-function updateVisualizations{
+function updateVisualizations(){
   // Update Fire Map
   
   // Update Earthquake Map
