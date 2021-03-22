@@ -6,10 +6,10 @@ from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template, redirect
 
 #database setup
-path="../../data/californiadisasters.sqlite"
+path="data/californiadisasters.sqlite"
 engine=create_engine(f"sqlite:///{path}")
 
 #create dates list for checking on for fire api's
@@ -54,7 +54,8 @@ def welcome():
         # /api/v1.0/earthquake/classification/magnitude/classification/<classification>  returns earthquakes based on magnitude class
         #/api/v1.0/earthquake/classification/depth/classification/<classification>  returns earthquakes based on depth class
     
-    return f"error! Please input proper api path",404
+    # return f"error! Please input proper api path",404
+    return render_template("index.html")
 
 #set fire db route
 @app.route("/api/v1.0/fire")

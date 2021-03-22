@@ -45,9 +45,8 @@ var button = d3.select("#filter");
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
-// grab full data sets
-var fireData = insertAPIcallhere
-var earthquakeData = insertAPIcallhere
+var fireData = d3.json('http://127.0.0.1:5000/api/v1.0/fire', data => data)
+var earthquakeData = d3.json('http://127.0.0.1:5000/api/v1.0/earthquake', data => data);
 
 // set filtered data to default values
 var filteredFire = fireData // add default values
@@ -56,7 +55,9 @@ var filteredEarthquake = earthquakeData // add default values
 // create filter function for datasets
 function filterData() {
   // Prevent the page from refreshing
-  d3.event.preventDefault();
+  // d3.event.preventDefault();
+
+  var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
 
   // Select the input element and get the raw HTML node
   var inputElement_startdate = d3.select("#startdate");
@@ -74,29 +75,29 @@ function filterData() {
   var filteredEarthquake = earthquakeData
 
   if (inputValue_start !== null && inputValue_start !== '') {
-    filteredFire = filteredFire.filter( data => data.datetime > inputValue_date);
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime > inputValue_date);
+    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] > inputValue_start);
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) > inputValue_start);
   }
   else {
-    filteredFire = filteredFire.filter( data => data.datetime > '01/01/2013');
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime > '01/01/2013');
+    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] > '01/01/2013');
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) > '01/01/2013');
   };
 
   if (inputValue_end !== null && inputValue_end !== '') {
-    filteredFire = filteredFire.filter( data => data.datetime < inputValue_date);
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < inputValue_date);
+    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] < inputValue_end);
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) < inputValue_end);
   }
   else {
-    filteredFire = filteredFire.filter( data => data.datetime < getToday());
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < getToday());
+    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] < getToday());
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) < getToday());
   };
 
   if (inputValue_fire == null && inputValue_fire == '') {
-    filteredFire = filteredFire.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
+    filteredFire = {}
   };
 
   if (inputValue_earthquake == null && inputValue_earthquake == '') {
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
+    filteredEarthquake = {}
   };
 
 
@@ -113,37 +114,37 @@ function filterData() {
 
 
 // CREATE BAR CHART _____________________________________________________________________________
-function plotBarChart(){
-  // get data
-  [filteredFire, filteredEarthquake] = filteredData()
-  [counties, points] = dangerPoints(filteredFire, filteredEarthquake)
+// function plotBarChart(){
+//   // get data
+//   [filteredFire, filteredEarthquake] = filteredData()
+//   [counties, points] = dangerPoints(filteredFire, filteredEarthquake)
 
-  var trace1 = {
-    x: counties,
-    y: points,
-    type: "bar"
-  };
+//   var trace1 = {
+//     x: counties,
+//     y: points,
+//     type: "bar"
+//   };
 
-  var data = [trace1];
+//   var data = [trace1];
 
-  var layout = {
-    title: "'Bar' Chart"
-  };
+//   var layout = {
+//     title: "'Bar' Chart"
+//   };
 
-  Plotly.newPlot("chartid", data, layout);
-};
+//   Plotly.newPlot("chartid", data, layout);
+// };
 
 
-// FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
-function updateVisualizations{
-  // Update Fire Map
+// // FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
+// function updateVisualizations() {
+//   // Update Fire Map
   
-  // Update Earthquake Map
+//   // Update Earthquake Map
 
-  // Update Bar Chart
-  plotBarChart()
-};
+//   // Update Bar Chart
+//   plotBarChart()
+// };
 
-// CALL THE FUNCTIONS _____________________________________________________________________________
-button.on("click", updateVisualizations);
-form.on("submit",updateVisualizations);
+// // CALL THE FUNCTIONS _____________________________________________________________________________
+// button.on("click", updateVisualizations);
+// form.on("submit",updateVisualizations);
