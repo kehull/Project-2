@@ -13,7 +13,7 @@ html {
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
     font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    background: #ce1212;
 }
 
 p {
@@ -70,8 +70,8 @@ a:focus {
     left: 0;
     height: 100vh;
     z-index: 999;
-    background: #7386D5;
-    color: #fff;
+    background: #13225e;
+    color: rgb(209, 209, 209);
     transition: all 0.3s;
 }
 
@@ -81,7 +81,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #13225e;
 }
 
 #sidebar ul.components {
@@ -102,14 +102,14 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #13225e;
     background: #fff;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #13225e;
 }
 
 a[data-toggle="collapse"] {
@@ -127,7 +127,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #13225e;
     color:#fff;
 }
 
@@ -150,7 +150,7 @@ a.download {
 
 a.article,
 a.article:hover {
-    background: #6d7fcc !important;
+    background: #13225e !important;
     color: #fff !important;
 }
 
