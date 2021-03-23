@@ -52,7 +52,7 @@ def welcome():
         # /api/v1.0/earthquake/classification/magnitude/classification/<classification>  returns earthquakes based on magnitude class
         #/api/v1.0/earthquake/classification/depth/classification/<classification>  returns earthquakes based on depth class
     
-    return render_template("templates/index.html")
+    return render_template("index.html")
 
 #set fire db route
 @app.route("/api/v1.0/fire")
