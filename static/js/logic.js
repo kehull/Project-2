@@ -57,6 +57,7 @@ function friendlyDate(date) {
 // Format Date for comparisons
 function formatDate(date) {
   var newdate = new Date(date);
+  newdate.setHours(0, 0, 0, 0);
   return newdate
 }
 
@@ -102,38 +103,26 @@ function filterData() {
   var inputValue_fire = inputElement_excludeFire.property("value");
   var inputValue_earthquake = inputElement_excludeEarthquake.property("value");
 
+  // reset the data before aplying filters
   var filteredFire = fireData
   var filteredEarthquake = earthquakeData
 
   if (inputValue_start !== null || inputValue_start !== '') {
-    // filteredFire = filteredFire.filter(data => console.log(data.date_cre));// >= inputValue_start);
-    console.log("There is a start date.")
-    console.log("the start date is:" + inputValue_start)
-     // The 0 there is the key, which sets the date to the epoch
-    filteredEarthquake = filteredEarthquake.filter(function(data){
-      var d = formatDate(data["epoch_time"]);
-
-      if (d >= formatDate(inputValue_start)){
-        console.log(d)
-      };
-      
-    }); // >= inputValue_start);
+    filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start)); // >= inputValue_start);
   }
   else {
-    // filteredFire = filteredFire.filter(data => Date.parse(data.date_cre) >= Date.parse('01/01/2013'));
-    console.log("There is not a start date.")
-    // filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["epoch_time"]) >= '01/01/2013');
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre) >= formatDate('01/01/2013'));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate('01/01/2013'));
   };
 
   if (inputValue_end !== null || inputValue_end !== '') {
-    // filteredFire = filteredFire.filter(data => Date.parse(data.date_cre) < inputValue_end);
-    console.log("There is an end date.")
-    // filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["epoch_time"]) <= inputValue_end);
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
   }
   else {
-    // filteredFire = filteredFire.filter(data => Date.parse(data.date_cre) < Date.parse(getToday()));
-    console.log("There is not an end date.")
-    // filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["epoch_time"]) <= getToday());
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(getToday()));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(getToday()));
   };
 
   // if (inputValue_fire == null || inputValue_fire == '') {
@@ -144,6 +133,7 @@ function filterData() {
   //   filteredEarthquake = {}
   // };
 
+  
   updateVisualizations(filteredFire, filteredEarthquake)
 };
 
