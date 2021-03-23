@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>California Disasters</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>California Disasters</title>
 
   <!-- Our CSS -->
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
@@ -13,16 +13,18 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="" />
 
-  <!-- Fotorama-->
-  <!-- jQuery 1.8 or later, 33 KB -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Fotorama-->
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-<!-- Fotorama from CDNJS, 19 KB -->
-<link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
 
 </head>
@@ -35,7 +37,7 @@
             <div class="sidebar-header">
                 <h3>Navigation</h3>
             </div>
-    
+
             <ul class="list-unstyled components">
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
@@ -61,109 +63,112 @@
 
             <!-- Filters in Navigation Bar-->
             <form class="navbar-form navbar-right" role="search">
-                <div class="fheading"><h5>Filters</h5></div>
+                <div class="fheading">
+                    <h5>Filters</h5>
+                </div>
                 <div class="form-group">
 
                     <!-- start and end date filters-->
                     <input type="text" name="" value="" id="startdate" class="form-control" placeholder="01/01/2020">
                     <input type="text" name="" value="" id="enddate" class="form-control" placeholder="12/31/2020">
-                    
+
                     <!-- include fire/earthquake data filters -->
                     <input type="checkbox" id="fireform" name="fireform" value="Fire" checked>
-                        <label for="vehicle1"> Fire</label><br>
+                    <label for="vehicle1"> Fire</label><br>
                     <input type="checkbox" id="earthquake" name="earthquake" value="earthquake" checked>
-                        <label for="vehicle2"> Earthquake</label><br>
+                    <label for="vehicle2"> Earthquake</label><br>
                 </div>
                 <div>
-                    <input type="button" class="btn btn-sm btn-primary"  id="filter" value="Filter">
+                    <input type="button" class="btn btn-sm btn-primary" id="filter" value="Filter">
                 </div>
 
-                  <!-- Add images to <div class="fotorama"></div> -->
-<div class="fheading"><br><center><h5>Meet your developers!</h5></center></div>
-<div class="slider_fotorama fotorama"
-     data-allowfullscreen="false"
-     data-click="false"
-     data-loop="true"
-     data-auto="true"
-     data-shuffle="true"
-     data-arrows="true"
-     data-width="100%"
-     data-fit="contain">
+                <!-- Add images to <div class="fotorama"></div> -->
+                <div class="fheading"><br>
+                    <center>
+                        <h5>Meet your developers!</h5>
+                    </center>
+                </div>
+                <div class="slider_fotorama fotorama" data-allowfullscreen="false" data-click="false" data-loop="true"
+                    data-auto="true" data-shuffle="true" data-arrows="true" data-width="100%" data-fit="contain">
 
-     <div data-img="http://josephanzalone.com/images/p35.jpg" data-caption="Ali Emily">
-        <div class="slider_inner">
-            <a href="http://www.linkedin.com" target="_blank"><img src="http://josephanzalone.com/images/p35.jpg" style="width:100%;"></a>
-        </div>
-    </div>
+                    <div data-img="http://josephanzalone.com/images/p35.jpg" data-caption="Ali Emily">
+                        <div class="slider_inner">
+                            <a href="http://www.linkedin.com" target="_blank"><img
+                                    src="http://josephanzalone.com/images/p35.jpg" style="width:100%;"></a>
+                        </div>
+                    </div>
 
-    <div data-img="http://josephanzalone.com/images/p32.jpg" data-caption="David Fournie">
-        <div class="slider_inner">
-            <a href="http://www.linkedin.com" target="_blank"><img src="http://josephanzalone.com/images/p32.jpg" style="width:100%"></a>
-        </div>
-    </div>
+                    <div data-img="http://josephanzalone.com/images/p32.jpg" data-caption="David Fournie">
+                        <div class="slider_inner">
+                            <a href="http://www.linkedin.com" target="_blank"><img
+                                    src="http://josephanzalone.com/images/p32.jpg" style="width:100%"></a>
+                        </div>
+                    </div>
 
-    <div data-img="http://josephanzalone.com/images/p16.jpg" data-caption="Janelle Goddard">
-        <div class="slider_inner">
-            <a href="http://www.linkedin.com" target="_blank"><img src="http://josephanzalone.com/images/p16.jpg" style="width:100%"></a>
-        </div>
-    </div>
+                    <div data-img="http://josephanzalone.com/images/p16.jpg" data-caption="Janelle Goddard">
+                        <div class="slider_inner">
+                            <a href="http://www.linkedin.com" target="_blank"><img
+                                    src="http://josephanzalone.com/images/p16.jpg" style="width:100%"></a>
+                        </div>
+                    </div>
 
-    <div data-img="http://josephanzalone.com/images/p38.jpg" data-caption="Kelly Hull">
-        <div class="slider_inner">
-            <a href="http://www.linkedin.com" target="_blank"><img src="http://josephanzalone.com/images/p38.jpg" style="width:100%"></a>
-        </div>
-    </div>
+                    <div data-img="http://josephanzalone.com/images/p38.jpg" data-caption="Kelly Hull">
+                        <div class="slider_inner">
+                            <a href="http://www.linkedin.com" target="_blank"><img
+                                    src="http://josephanzalone.com/images/p38.jpg" style="width:100%"></a>
+                        </div>
+                    </div>
 
-</div>
+                </div>
 
         </nav>
-        
+
         <!-- Page Content -->
         <div id="content">
 
-                        <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button>
-                <div class="heading">
-                    <h1>Finding Safe Harbor in California</h1>
-                </div>
-                <div class="line"></div>
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+            <div class="heading">
+                <h1>Finding Safe Harbor in California</h1>
+            </div>
+            <div class="line"></div>
 
-                <p>
-                    California is one of the biggest and most populous states in the entire US. But just how safe is it to live and work there?
-                </p>
-                <p>
-                    By looking at the number and size of earthquakes and wildfires- two of California's most common national disasters- as well as the counties in which
-                    these disasters take place and the frequency with which those counties experience wildfires and earthquakes, we can determine which counties are the 
-                    safest and most dangerous.
-                </p>
-            
-                
-                <!-- Maps -->
-                <div id="mapid">
+            <p>
+                California is one of the biggest and most populous states in the entire US. But just how safe is it to
+                live and work there?
+            </p>
+            <p>
+                By looking at the number and size of earthquakes and wildfires- two of California's most common national
+                disasters- as well as the counties in which
+                these disasters take place and the frequency with which those counties experience wildfires and
+                earthquakes, we can determine which counties are the
+                safest and most dangerous.
+            </p>
 
-                </div>
 
-                <!-- Bar Chart-->
-                <div id="chartid">
+            <!-- Maps -->
+            <div id="mapid"></div>
+            <div id="stackedbarchart"></div>
 
-                </div>
-
-                <!-- Timeline -->
-                <div id="timelineid">
-
-                </div>
         </div>
-        
-        <h1>California Disasters</h1>
 
-    
+        <!-- Bar Chart-->
+        <div id="chartid">
+
+        </div>
+
+    </div>
+
+    <h1>California Disasters</h1>
+
+
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
-    integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
-    crossorigin=""></script>
+        integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+        crossorigin=""></script>
 
     <!-- D3 JavaScript -->
     <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script> -->
@@ -172,14 +177,19 @@
   
     
     <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+
     <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
     <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-    
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
     <!-- Marker Cluster JS -->
     <!-- <script type="text/javascript" src="https://unpkg.com/leaflet.markercluster@1.0.3/dist/leaflet.markercluster.js"></script> -->
     
@@ -189,25 +199,31 @@
     <!-- API Key-->
     <script type="text/javascript" src="../static/js/config.js"></script>
     
+    <!-- Stacked bar chart-->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
     <!-- JS -->
     <script type="text/javascript" src="../static/js/logic.js"></script>
     <!-- Zoomy-JS-->
-    
+
 
     <!-- Sidebar Formatting -->
     <script type="text/javascript">
-    $(document).ready(function () {
-        $("#sidebar").mCustomScrollbar({
-            theme: "minimal"
-        });
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
 
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar, #content').toggleClass('active');
-            $('.collapse.in').toggleClass('in');
-            $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
         });
-    });
-</script>
+    </script>
 
 </body>
 

@@ -26,7 +26,7 @@ d3.json(link, function(data) {
 
 
 // FILTER FUNCTIONS ______________________________________________________________________________
-// get current date
+//get current date
 function getToday() {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
