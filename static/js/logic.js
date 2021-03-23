@@ -132,7 +132,7 @@ d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", functi
         .addTo(myMap);
     }
   }
-  }
+  
 });
 
 // set filtered data to default values
