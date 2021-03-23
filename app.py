@@ -2,7 +2,8 @@
 import os
 import sqlalchemy
 from sqlalchemy import create_engine, func
-from flask import Flask, jsonify,request, render_template, redirect
+
+from flask import Flask, jsonify, request, render_template, redirect
 
 #database setup
 path="data/californiadisasters.sqlite"
@@ -51,7 +52,9 @@ def welcome():
         # /api/v1.0/earthquake/classification/magnitude/classification/<classification>  returns earthquakes based on magnitude class
         #/api/v1.0/earthquake/classification/depth/classification/<classification>  returns earthquakes based on depth class
     
+    # return f"error! Please input proper api path",404
     return render_template("index.html")
+
 
 #set fire db route
 @app.route("/api/v1.0/fire")
@@ -368,4 +371,8 @@ def depth_class(classification):
     
 #close out flask
 if __name__=='__main__':
+<<<<<<< HEAD
     app.run(debug=True)
+=======
+    app.run(debug=True)
+>>>>>>> main

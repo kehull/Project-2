@@ -39,15 +39,47 @@ function getToday() {
   return today;
 }
 
+// Format Date from epoch to mm-dd-yyyy
+function friendlyDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [month, day, year].join('-');
+}
+
+// Format Date for comparisons
+function formatDate(date) {
+  var newdate = new Date(date);
+  newdate.setHours(0, 0, 0, 0);
+  return newdate
+}
+
 // find the button (id in HTML is filter-btn)
 var button = d3.select("#filter");
 
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
-// grab full data sets
-// var fireData = insertAPIcallhere
-// var earthquakeData = insertAPIcallhere
+var fireData = []
+d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
+  for (var i =0; i < response["data"].length; i++) {
+    fireData.push(response["data"][i]["properties"])
+  }
+});
+
+var earthquakeData = []
+d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
+  for (var i =0; i < response["data"].length; i++) {
+    earthquakeData.push(response["data"][i]["properties"])
+  }
+});
 
 // set filtered data to default values
 var filteredFire = fireData // add default values
@@ -55,6 +87,7 @@ var filteredEarthquake = earthquakeData // add default values
 
 // create filter function for datasets
 function filterData() {
+
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
@@ -70,53 +103,70 @@ function filterData() {
   var inputValue_fire = inputElement_excludeFire.property("value");
   var inputValue_earthquake = inputElement_excludeEarthquake.property("value");
 
+  // reset the data before aplying filters
   var filteredFire = fireData
   var filteredEarthquake = earthquakeData
 
-  if (inputValue_start !== null && inputValue_start !== '') {
-    filteredFire = filteredFire.filter( data => data.datetime > inputValue_date);
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime > inputValue_date);
+  if (inputValue_start !== null || inputValue_start !== '') {
+    filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start)); // >= inputValue_start);
   }
   else {
-    filteredFire = filteredFire.filter( data => data.datetime > '01/01/2013');
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime > '01/01/2013');
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre) >= formatDate('01/01/2013'));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate('01/01/2013'));
   };
 
-  if (inputValue_end !== null && inputValue_end !== '') {
-    filteredFire = filteredFire.filter( data => data.datetime < inputValue_date);
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < inputValue_date);
+  if (inputValue_end !== null || inputValue_end !== '') {
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
   }
   else {
-    filteredFire = filteredFire.filter( data => data.datetime < getToday());
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < getToday());
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(getToday()));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(getToday()));
   };
 
-  if (inputValue_fire == null && inputValue_fire == '') {
-    filteredFire = filteredFire.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
-  };
+  // if (inputValue_fire == null || inputValue_fire == '') {
+  //   filteredFire = {}
+  // };
 
-  if (inputValue_earthquake == null && inputValue_earthquake == '') {
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
-  };
+  // if (inputValue_earthquake == null || inputValue_earthquake == '') {
+  //   filteredEarthquake = {}
+  // };
 
 
-  return filteredFire, filteredEarthquake
+  updateVisualizations(filteredFire, filteredEarthquake)
 };
 
 // DANGER POINTS FUNCTION _______________________________________________________________________
+function dangerScores(filtered_Fire, filtered_Earthquake){
 
+};
 
 // CREATE FIRE MAP ______________________________________________________________________________
+function fireMap(fire_Data) {
+  var heatArray=[];
+  
+  for (var i=0; i< fire_Data.length; i++){
+    var lat = fire_Data[i]["lat"]
+    var lng = fire_Data[i]["lng"]
+    heatArray.push([lng,lat])
+  }
+  var heat= L.heatLayer(heatArray,{
+    radius: 20,
+    blur:35
+  }).addTo(myMap);
 
+};
 
 // CREATE EARTHQUAKE MAP ________________________________________________________________________
-
+function earthquakeMap(earthquake_Data) {
+  
+};
 
 // CREATE BAR CHART _____________________________________________________________________________
-function plotBarChart(){
+function plotBarChart(filtered_Fire, filtered_Earthquake) {
   // get data
-  [filteredFire, filteredEarthquake] = filteredData()
-  [counties, points] = dangerPoints(filteredFire, filteredEarthquake)
+  [counties, points] = dangerScores(filtered_Fire, filtered_Earthquake)
 
   var trace1 = {
     x: counties,
@@ -135,82 +185,27 @@ function plotBarChart(){
 
 
 // FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
-function updateVisualizations(){
-  // Update Fire Map
+function updateVisualizations(filtered_Fire, filtered_Earthquake) {
+  // [filtered_Fire, filtered_Earthquake] = filterData()
   
+  console.log(filtered_Fire)
+  console.log(filtered_Earthquake)
+  
+  // Update Fire Map
+  // fireMap(fire_Data)
+
   // Update Earthquake Map
+  // earthquakeMap(earthquake_Data)
 
   // Update Bar Chart
-  plotBarChart()
+  // plotBarChart()
 };
 
 // CALL THE FUNCTIONS _____________________________________________________________________________
-button.on("click", updateVisualizations);
-form.on("submit",updateVisualizations);
+  // fireMap(filteredFire)
+  // earthquakeMap(filteredEarthquake)
+  // plotBarChart(filteredFire, filteredEarthquake)
 
-
-//Creating stacked bar chart
-
-var options = {
-  chart: {
-    //renderTo: '#stackedbarchart',
-    type: 'bar'
-  },
-  title: {
-    text: 'Top 5 Disastrous Counties in California'
-  },
-  xAxis: {
-    categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
-    title: {
-      text: null
-    }
-  },
-  yAxis: {
-    min: 0,
-    title: {
-      text: 'Population (millions)',
-      align: 'high'
-    },
-    labels: {
-      overflow: 'justify'
-    }
-  },
-  tooltip: {
-    valueSuffix: ' millions'
-  },
-  plotOptions: {
-    bar: {
-      dataLabels: {
-        enabled: true
-      }
-    }
-  },
-  legend: {
-    layout: 'vertical',
-    align: 'right',
-    verticalAlign: 'top',
-    x: -40,
-    y: 80,
-    floating: true,
-    borderWidth: 1,
-    backgroundColor: '#FFFFFF',
-    shadow: true
-  },
-  credits: {
-    enabled: false
-  },
-  series: [{
-    name: 'Year 1800',
-    data: [107, 31, 635, 203, 2]
-  }, {
-    name: 'Year 1900',
-    data: [133, 156, 947, 408, 6]
-  }, {
-    name: 'Year 2000',
-    data: [814, 841, 3714, 727, 31]
-  }, {
-    name: 'Year 2016',
-    data: [1216, 1001, 4436, 738, 40]
-  }]
-};
-Highcharts.chart('stackedbarchart',options);
+// D3 Listener ____________________________________________________________________________________
+button.on("click", filterData);
+form.on("submit",filterData);
