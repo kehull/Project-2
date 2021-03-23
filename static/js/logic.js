@@ -1,30 +1,3 @@
-// CREATE COUNTIES MAP ______________________________________________________________________________
-// Creating map object
-var myMap = L.map("mapid", {
-  center: [36.7783, -119.4179],
-  zoom: 5
-});
-
-// Adding tile layer
-L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-  tileSize: 512,
-  maxZoom: 18,
-  zoomOffset: -1,
-  id: "mapbox/streets-v11",
-  accessToken: API_KEY
-}).addTo(myMap);
-
-// Use this link to get the geojson data.
-var link = "https://opendata.arcgis.com/datasets/35487e8c86644229bffdb5b0a4164d85_0.geojson";
-
-// Grabbing our GeoJSON data..
-d3.json(link, function(data) {
-  // Creating a GeoJSON layer with the retrieved data
-  L.geoJson(data).addTo(myMap);
-});
-
-
 // FILTER FUNCTIONS ______________________________________________________________________________
 //get current date
 function getToday() {
@@ -67,6 +40,7 @@ var button = d3.select("#filter");
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
+// var fireData = d3.json("http://127.0.0.1:5000/api/v1.0/fire")
 var fireData = []
 d3.json("https://california-disasters.herokuapp.com/api/v1.0/fire", function(response) {
   for (var i =0; i < response["data"].length; i++) {
@@ -139,6 +113,35 @@ d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", functi
 var filteredFire = fireData // add default values
 var filteredEarthquake = earthquakeData // add default values
 
+// INITIALIZE COUNTIES MAP ______________________________________________________________________________
+// Creating map object
+var myMap = L.map("mapid", {
+  center: [36.7783, -119.4179],
+  zoom: 5
+});
+
+// Adding tile layer
+L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/streets-v11",
+  accessToken: API_KEY
+}).addTo(myMap);
+
+// Use this link to get the geojson data.
+var link = "https://opendata.arcgis.com/datasets/35487e8c86644229bffdb5b0a4164d85_0.geojson";
+
+// Grabbing our GeoJSON data..
+d3.json(link, function(data) {
+  // Creating a GeoJSON layer with the retrieved data
+  L.geoJson(data).addTo(myMap);
+});
+
+// Initialize earthquake data
+
+
 // create filter function for datasets
 function filterData() {
 
@@ -163,18 +166,17 @@ function filterData() {
 
   if (!inputValue_start) {
 
-    console.log(inputValue_start + "Is NULL")
+    // console.log(inputValue_start + "Is NULL")
     filteredFire = filteredFire.filter(data => formatDate(data.date_cre) >= formatDate("01/01/2013"));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate("01/01/2013"));
     
-    // filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
-    // filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start));
-    // console.log(inputValue_start + "Is NOT NULL") // >= inputValue_start);
   }
   else {
+
     filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start));
-    console.log(inputValue_start + "Is NOT NULL")
+    // console.log(inputValue_start + "Is NOT NULL")
+
   };
 
   if (!inputValue_end) {
@@ -182,23 +184,26 @@ function filterData() {
     filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(getToday()));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(getToday()));
 
-    // filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
-    // filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
   }
   else {
+
     filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
+
   };
 
-  // if (inputValue_fire == null || inputValue_fire == '') {
   if (!inputValue_fire){
-    console.log("fire checkbox is:" + inputValue_fire)
+
+    // console.log("fire checkbox is:" + inputValue_fire)
     filteredFire = {}
+
   };
 
   if (!inputValue_earthquake) {
-    console.log("fire checkbox is:" + inputValue_fire)
+
+    // console.log("fire checkbox is:" + inputValue_fire)
     filteredEarthquake = {}
+
   };
 
 
@@ -252,23 +257,77 @@ function dangerScores(filtered_Fire, filtered_Earthquake){
 
 // CREATE FIRE MAP ______________________________________________________________________________
 function fireMap(fire_Data) {
-  var heatArray=[];
-  
-  for (var i=0; i< fire_Data.length; i++){
-    var lat = fire_Data[i]["lat"]
-    var lng = fire_Data[i]["lng"]
-    heatArray.push([lng,lat])
-  }
-  var heat= L.heatLayer(heatArray,{
-    radius: 20,
-    blur:35
-  }).addTo(myMap);
+var heatArray=[];
+
+for (i=0; i< fire_Data.length; i++) {
+  // console.log(fire_Data[i])
+  heatArray.push([fire_Data[i]["lat"],filteredFire[i]["lng"]])
+}
+// console.log(heatArray);
+var heat= L.heatLayer(heatArray,{
+  radius: 20,
+  blur:2
+}).addTo(myMap);
 
 };
 
 // CREATE EARTHQUAKE MAP ________________________________________________________________________
 function earthquakeMap(earthquake_Data) {
-  
+  for (var i =0; i < earthquake_Data.length; i++) {
+    
+    var long = earthquake_Data[i]["latitude"];
+    var lat = earthquake_Data[i]["longitude"];
+    var depth = earthquake_Data[i]["depth(km)"];
+    var size = earthquake_Data[i]["magnitude"];
+    var loc = earthquake_Data[i]["location"];
+
+    if (size <= 5.9 && size > 5) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_green.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Moderate)"
+    }
+    else if (size <= 6.9 && size > 5.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_yellow.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Strong)"
+    }
+    else if (size <= 7.9 && size > 6.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_orange.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Major)"
+    }
+    else if (size > 7.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_red.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Great)"
+    }
+    
+    // Check for location property
+    if (size >= 5) {
+      var location = [lat, long];
+      // create marker
+      var markerLayer = L.marker(location, {
+        icon:earthquakeIcon,
+      })
+        .bindPopup(
+          "<h3>Location: " + loc +
+            "</h3><h4>Magnitude: " +
+            size + " " + popupText +
+            "<br>Depth: " +
+            depth +
+            "km</h4>"
+        )
+        .addTo(myMap);
+    }
+  }
 };
 
 // CREATE BAR CHART _____________________________________________________________________________
@@ -291,35 +350,65 @@ function plotBarChart(filtered_Fire, filtered_Earthquake) {
   Plotly.newPlot("chartid", data, layout);
 };
 
-
-// FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
+// FUNCTION TO UPDATE VISUALIZATIONS ____________________________________________________________
 function updateVisualizations(filtered_Fire, filtered_Earthquake) {
   // [filtered_Fire, filtered_Earthquake] = filterData()
+  // myMap.clearLayers();
+
+  myMap.eachLayer(function (layer) {myMap.removeLayer(layer);});
   
   console.log("fire data: ")
   console.log(filtered_Fire)
   console.log("earthquake data: ")
   console.log(filtered_Earthquake)
 
-  // [county_names, danger_score] = dangerScores(filtered_Fire, filtered_Earthquake)
+  // Add Map
+  // var myMap = L.map("mapid", {
+  //   center: [36.7783, -119.4179],
+  //   zoom: 5
+  // });
   
-  // console.log(county_names)
-  // console.log(danger_score)
+  // Adding tile layer
+  L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    tileSize: 512,
+    maxZoom: 18,
+    zoomOffset: -1,
+    id: "mapbox/streets-v11",
+    accessToken: API_KEY
+  }).addTo(myMap);
+  
+  // Use this link to get the geojson data.
+  var link = "https://opendata.arcgis.com/datasets/35487e8c86644229bffdb5b0a4164d85_0.geojson";
+  
+  // Grabbing our GeoJSON data..
+  d3.json(link, function(data) {
+    // Creating a GeoJSON layer with the retrieved data
+    L.geoJson(data).addTo(myMap);
+  });
+  
   // Update Fire Map
-  // fireMap(fire_Data)
+  fireMap(filtered_Fire)
+
+  // Run danger scorer
+  // [county_names, danger_score] = dangerScores(filtered_Fire, filtered_Earthquake)
+  // console.log("county name: ")
+  // console.log(county_names)
+  // console.log("danger score: ")
+  // console.log(danger_score)
 
   // Update Earthquake Map
-  // earthquakeMap(earthquake_Data)
+  earthquakeMap(filtered_Earthquake)
 
   // Update Bar Chart
   // plotBarChart()
 };
 
-// CALL THE FUNCTIONS _____________________________________________________________________________
-  // fireMap(filteredFire)
-  // earthquakeMap(filteredEarthquake)
+// CALL THE FUNCTIONS ___________________________________________________________________________
+  fireMap(filteredFire)
+  earthquakeMap(filteredEarthquake)
   // plotBarChart(filteredFire, filteredEarthquake)
 
-// D3 Listener ____________________________________________________________________________________
+// D3 Listener __________________________________________________________________________________
 button.on("click", filterData);
 form.on("submit",filterData);
