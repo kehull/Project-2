@@ -67,6 +67,7 @@ var button = d3.select("#filter");
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
+// var fireData = d3.json("http://127.0.0.1:5000/api/v1.0/fire")
 var fireData = []
 d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
   for (var i =0; i < response["data"].length; i++) {
@@ -109,18 +110,17 @@ function filterData() {
 
   if (!inputValue_start) {
 
-    console.log(inputValue_start + "Is NULL")
+    // console.log(inputValue_start + "Is NULL")
     filteredFire = filteredFire.filter(data => formatDate(data.date_cre) >= formatDate("01/01/2013"));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate("01/01/2013"));
     
-    // filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
-    // filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start));
-    // console.log(inputValue_start + "Is NOT NULL") // >= inputValue_start);
   }
   else {
+
     filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start));
-    console.log(inputValue_start + "Is NOT NULL")
+    // console.log(inputValue_start + "Is NOT NULL")
+
   };
 
   if (!inputValue_end) {
@@ -128,23 +128,26 @@ function filterData() {
     filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(getToday()));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(getToday()));
 
-    // filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
-    // filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
   }
   else {
+
     filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
     filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
+
   };
 
-  // if (inputValue_fire == null || inputValue_fire == '') {
   if (!inputValue_fire){
-    console.log("fire checkbox is:" + inputValue_fire)
+
+    // console.log("fire checkbox is:" + inputValue_fire)
     filteredFire = {}
+
   };
 
   if (!inputValue_earthquake) {
-    console.log("fire checkbox is:" + inputValue_fire)
+
+    // console.log("fire checkbox is:" + inputValue_fire)
     filteredEarthquake = {}
+
   };
 
 
@@ -198,17 +201,17 @@ function dangerScores(filtered_Fire, filtered_Earthquake){
 
 // CREATE FIRE MAP ______________________________________________________________________________
 function fireMap(fire_Data) {
-  var heatArray=[];
-  
-  for (var i=0; i< fire_Data.length; i++){
-    var lat = fire_Data[i]["lat"]
-    var lng = fire_Data[i]["lng"]
-    heatArray.push([lng,lat])
-  }
-  var heat= L.heatLayer(heatArray,{
-    radius: 20,
-    blur:35
-  }).addTo(myMap);
+var heatArray=[];
+
+for (i=0; i< fire_Data.length; i++) {
+  // console.log(fire_Data[i])
+  heatArray.push([fire_Data[i]["lat"],filteredFire[i]["lng"]])
+}
+// console.log(heatArray);
+var heat= L.heatLayer(heatArray,{
+  radius: 20,
+  blur:2
+}).addTo(myMap);
 
 };
 
@@ -246,13 +249,16 @@ function updateVisualizations(filtered_Fire, filtered_Earthquake) {
   console.log(filtered_Fire)
   console.log("earthquake data: ")
   console.log(filtered_Earthquake)
-
-  // [county_names, danger_score] = dangerScores(filtered_Fire, filtered_Earthquake)
   
-  // console.log(county_names)
-  // console.log(danger_score)
   // Update Fire Map
-  // fireMap(fire_Data)
+  fireMap(filtered_Fire)
+
+  // Run danger scorer
+  [county_names, danger_score] = dangerScores(filtered_Fire, filtered_Earthquake)
+  console.log("county name: ")
+  console.log(county_names)
+  console.log("danger score: ")
+  console.log(danger_score)
 
   // Update Earthquake Map
   // earthquakeMap(earthquake_Data)
