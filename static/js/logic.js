@@ -26,7 +26,7 @@ d3.json(link, function(data) {
 
 
 // FILTER FUNCTIONS ______________________________________________________________________________
-// get current date
+//get current date
 function getToday() {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -46,8 +46,8 @@ var button = d3.select("#filter");
 var form = d3.select("#form-group");
 
 // grab full data sets
-var fireData = insertAPIcallhere
-var earthquakeData = insertAPIcallhere
+// var fireData = insertAPIcallhere
+// var earthquakeData = insertAPIcallhere
 
 // set filtered data to default values
 var filteredFire = fireData // add default values
@@ -135,7 +135,7 @@ function plotBarChart(){
 
 
 // FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
-function updateVisualizations{
+function updateVisualizations(){
   // Update Fire Map
   
   // Update Earthquake Map
@@ -147,3 +147,70 @@ function updateVisualizations{
 // CALL THE FUNCTIONS _____________________________________________________________________________
 button.on("click", updateVisualizations);
 form.on("submit",updateVisualizations);
+
+
+//Creating stacked bar chart
+
+var options = {
+  chart: {
+    //renderTo: '#stackedbarchart',
+    type: 'bar'
+  },
+  title: {
+    text: 'Top 5 Disastrous Counties in California'
+  },
+  xAxis: {
+    categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+    title: {
+      text: null
+    }
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Population (millions)',
+      align: 'high'
+    },
+    labels: {
+      overflow: 'justify'
+    }
+  },
+  tooltip: {
+    valueSuffix: ' millions'
+  },
+  plotOptions: {
+    bar: {
+      dataLabels: {
+        enabled: true
+      }
+    }
+  },
+  legend: {
+    layout: 'vertical',
+    align: 'right',
+    verticalAlign: 'top',
+    x: -40,
+    y: 80,
+    floating: true,
+    borderWidth: 1,
+    backgroundColor: '#FFFFFF',
+    shadow: true
+  },
+  credits: {
+    enabled: false
+  },
+  series: [{
+    name: 'Year 1800',
+    data: [107, 31, 635, 203, 2]
+  }, {
+    name: 'Year 1900',
+    data: [133, 156, 947, 408, 6]
+  }, {
+    name: 'Year 2000',
+    data: [814, 841, 3714, 727, 31]
+  }, {
+    name: 'Year 2016',
+    data: [1216, 1001, 4436, 738, 40]
+  }]
+};
+Highcharts.chart('stackedbarchart',options);
