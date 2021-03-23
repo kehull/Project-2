@@ -40,7 +40,7 @@ function getToday() {
 }
 
 // Format Date from epoch to mm-dd-yyyy
-function formatDate(date) {
+function friendlyDate(date) {
   var d = new Date(date),
       month = '' + (d.getMonth() + 1),
       day = '' + d.getDate(),
@@ -52,6 +52,12 @@ function formatDate(date) {
       day = '0' + day;
 
   return [month, day, year].join('-');
+}
+
+// Format Date for comparisons
+function formatDate(date) {
+  var newdate = new Date(date);
+  return newdate
 }
 
 // find the button (id in HTML is filter-btn)
@@ -107,7 +113,7 @@ function filterData() {
     filteredEarthquake = filteredEarthquake.filter(function(data){
       var d = formatDate(data["epoch_time"]);
 
-      if (d >= inputValue_start){
+      if (d >= formatDate(inputValue_start)){
         console.log(d)
       };
       
