@@ -228,7 +228,7 @@ def earthquake_db():
     
     json_dict={"data":[]}
     
-    for place, time, mag, lng,lat,depth in results_list:
+    for place, time, mag, lat,lng,depth in results_list:
         test_dict={"properties":{}}
         
         test_dict["properties"]["location"]=place
@@ -255,7 +255,7 @@ def magnitude_return(magnitude):
 
         json_dict={"data":[]}
         
-        for place, time, mag, lng,lat,depth in results_list:
+        for place, time, mag, lat,lng,depth in results_list:
             test_dict={"properties":{}}
             
             test_dict["properties"]["location"]=place
@@ -283,7 +283,7 @@ def depth_return(depth):
 
         json_dict={"data":[]}
         
-        for place, time, mag, lng,lat,depth in results_list:
+        for place, time, mag, lat,lng,depth in results_list:
             test_dict={"properties":{}}
             
             test_dict["properties"]["location"]=place
@@ -323,7 +323,7 @@ def mag_class(classification):
 
     json_dict={"data":[]}
     
-    for place, time, mag, lng,lat,depth in results_list:
+    for place, time, mag, lat,lng,depth in results_list:
         
         test_dict={"properties":{}}
         test_dict["properties"]["location"]=place
@@ -359,7 +359,7 @@ def depth_class(classification):
     
     json_dict={"data":[]}
     
-    for place, time, mag, lng,lat,depth in results_list:
+    for place, time, mag, lat,lng,depth in results_list:
         
         test_dict={"properties":{}}
         test_dict["properties"]["location"]=place
