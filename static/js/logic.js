@@ -87,28 +87,28 @@ d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", functi
 
     if (size <= 5.9 && size > 5) {
       var earthquakeIcon = L.icon({
-        iconUrl:'../icons/earthquake_icon_green.svg',
+        iconUrl:'../../icons/earthquake_icon_green.svg',
         iconSize: [32,32]
       })
       var popupText = "(Moderate)"
     }
     else if (size <= 6.9 && size > 5.9) {
       var earthquakeIcon = L.icon({
-        iconUrl:'../icons/earthquake_icon_yellow.svg',
+        iconUrl:'../../icons/earthquake_icon_yellow.svg',
         iconSize: [32,32]
       })
       var popupText = "(Strong)"
     }
     else if (size <= 7.9 && size > 6.9) {
       var earthquakeIcon = L.icon({
-        iconUrl:'../icons/earthquake_icon_orange.svg',
+        iconUrl:'../../icons/earthquake_icon_orange.svg',
         iconSize: [32,32]
       })
       var popupText = "(Major)"
     }
     else if (size > 7.9) {
       var earthquakeIcon = L.icon({
-        iconUrl:'../icons/earthquake_icon_red.svg',
+        iconUrl:'../../icons/earthquake_icon_red.svg',
         iconSize: [32,32]
       })
       var popupText = "(Great)"
