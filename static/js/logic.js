@@ -26,7 +26,7 @@ d3.json(link, function(data) {
 
 
 // FILTER FUNCTIONS ______________________________________________________________________________
-// get current date
+//get current date
 function getToday() {
   var today = new Date();
   var dd = String(today.getDate()).padStart(2, '0');
@@ -37,6 +37,28 @@ function getToday() {
 //   var date = new Date(dateTime.getTime());
 //   date.setHours(0, 0, 0, 0);
   return today;
+}
+
+// Format Date from epoch to mm-dd-yyyy
+function friendlyDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [month, day, year].join('-');
+}
+
+// Format Date for comparisons
+function formatDate(date) {
+  var newdate = new Date(date);
+  newdate.setHours(0, 0, 0, 0);
+  return newdate
 }
 
 // find the button (id in HTML is filter-btn)
@@ -119,6 +141,7 @@ var filteredEarthquake = earthquakeData // add default values
 
 // create filter function for datasets
 function filterData() {
+
   // Prevent the page from refreshing
   d3.event.preventDefault();
 
@@ -131,56 +154,127 @@ function filterData() {
   // Get the value property of the input element
   var inputValue_start = inputElement_startdate.property("value");
   var inputValue_end = inputElement_enddate.property("value");
-  var inputValue_fire = inputElement_excludeFire.property("value");
-  var inputValue_earthquake = inputElement_excludeEarthquake.property("value");
+  var inputValue_fire = inputElement_excludeFire.property("checked");
+  var inputValue_earthquake = inputElement_excludeEarthquake.property("checked");
 
+  // reset the data before aplying filters
   var filteredFire = fireData
   var filteredEarthquake = earthquakeData
 
-  if (inputValue_start !== null && inputValue_start !== '') {
-    filteredFire = filteredFire.filter( data => data.datetime > inputValue_date);
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime > inputValue_date);
+  if (!inputValue_start) {
+
+    console.log(inputValue_start + "Is NULL")
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre) >= formatDate("01/01/2013"));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate("01/01/2013"));
+    
+    // filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
+    // filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start));
+    // console.log(inputValue_start + "Is NOT NULL") // >= inputValue_start);
   }
   else {
-    filteredFire = filteredFire.filter( data => data.datetime > '01/01/2013');
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime > '01/01/2013');
+    filteredFire = filteredFire.filter(data => formatDate(data["date_cre"]) >= formatDate(inputValue_start));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) >= formatDate(inputValue_start));
+    console.log(inputValue_start + "Is NOT NULL")
   };
 
-  if (inputValue_end !== null && inputValue_end !== '') {
-    filteredFire = filteredFire.filter( data => data.datetime < inputValue_date);
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < inputValue_date);
+  if (!inputValue_end) {
+
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(getToday()));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(getToday()));
+
+    // filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
+    // filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
   }
   else {
-    filteredFire = filteredFire.filter( data => data.datetime < getToday());
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < getToday());
+    filteredFire = filteredFire.filter(data => formatDate(data.date_cre)  < formatDate(inputValue_end));
+    filteredEarthquake = filteredEarthquake.filter(data => formatDate(data["epoch_time"]) <= formatDate(inputValue_end));
   };
 
-  if (inputValue_fire == null && inputValue_fire == '') {
-    filteredFire = filteredFire.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
+  // if (inputValue_fire == null || inputValue_fire == '') {
+  if (!inputValue_fire){
+    console.log("fire checkbox is:" + inputValue_fire)
+    filteredFire = {}
   };
 
-  if (inputValue_earthquake == null && inputValue_earthquake == '') {
-    filteredEarthquake = filteredEarthquake.filter( data => data.datetime < '01/01/2013'); //find a better way to set the dataset to null
+  if (!inputValue_earthquake) {
+    console.log("fire checkbox is:" + inputValue_fire)
+    filteredEarthquake = {}
   };
 
 
-  return filteredFire, filteredEarthquake
+  updateVisualizations(filteredFire, filteredEarthquake)
 };
 
 // DANGER POINTS FUNCTION _______________________________________________________________________
 
+function dangerScores(filtered_Fire, filtered_Earthquake){
+  firescores = d3.csv("../../data/fire_danger_csv.csv");
+  // earthquakescores = d3.csv("../../data/earthquake_danger_csv.csv")
+  
+  //figure out a way to convert the CSVs to python functions that can be ran via javascript
+  //or just keep this part static if there isn't time -low priority
+
+  var array = {}
+
+  for (i=0; i < filtered_Fire.length; i++){
+    // var dict = {}
+    for (j=0; j < firescores.length; j++){
+      if (filtered_Fire[i]["name"] === firescores[j]["name"] && filtered_Fire[i]["county"] === firescores[j]["fire_danger_score"]){
+          // filteredFire[i]["score"] === firescores[j]["fire_danger_score"]
+          // dict["Id"] = filtered_Fire[i]["county"]
+          // dict["score"] = firescores[j]["fire_danger_score"]
+          if (array.hasOwnProperty(filtered_Fire[i]["county"])) {
+            array[filtered_Fire[i]["county"]] = array[filtered_Fire[i]["county"]] + firescores[j]["fire_danger_score"]
+          }
+          else {
+            array[filtered_Fire[i]["county"]] = firescores[j]["fire_danger_score"]
+          };
+      };
+    };
+  };
+
+  //groupby county and find the sum, populate 2 arrays 
+  // array.reduce(function(res, value) {
+  //   if (!res[value.Id]) {
+  //     res[value.Id] = { Id: value.Id, score: 0 };
+  //     result.push(res[value.Id])
+  //   }
+  //   res[value.Id].score += value.score;
+  //   return res;
+  // }, {});
+  
+
+  var county = Object.keys(array);
+  var score = Object.values(array);
+
+  return county, score
+};
 
 // CREATE FIRE MAP ______________________________________________________________________________
+function fireMap(fire_Data) {
+  var heatArray=[];
+  
+  for (var i=0; i< fire_Data.length; i++){
+    var lat = fire_Data[i]["lat"]
+    var lng = fire_Data[i]["lng"]
+    heatArray.push([lng,lat])
+  }
+  var heat= L.heatLayer(heatArray,{
+    radius: 20,
+    blur:35
+  }).addTo(myMap);
 
+};
 
 // CREATE EARTHQUAKE MAP ________________________________________________________________________
-
+function earthquakeMap(earthquake_Data) {
+  
+};
 
 // CREATE BAR CHART _____________________________________________________________________________
-function plotBarChart(){
+function plotBarChart(filtered_Fire, filtered_Earthquake) {
   // get data
-  [filteredFire, filteredEarthquake] = filteredData()
-  [counties, points] = dangerPoints(filteredFire, filteredEarthquake)
+  [counties, points] = dangerScores(filtered_Fire, filtered_Earthquake)
 
   var trace1 = {
     x: counties,
@@ -199,15 +293,33 @@ function plotBarChart(){
 
 
 // FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
-function updateVisualizations{
-  // Update Fire Map
+function updateVisualizations(filtered_Fire, filtered_Earthquake) {
+  // [filtered_Fire, filtered_Earthquake] = filterData()
   
+  console.log("fire data: ")
+  console.log(filtered_Fire)
+  console.log("earthquake data: ")
+  console.log(filtered_Earthquake)
+
+  // [county_names, danger_score] = dangerScores(filtered_Fire, filtered_Earthquake)
+  
+  // console.log(county_names)
+  // console.log(danger_score)
+  // Update Fire Map
+  // fireMap(fire_Data)
+
   // Update Earthquake Map
+  // earthquakeMap(earthquake_Data)
 
   // Update Bar Chart
-  plotBarChart()
+  // plotBarChart()
 };
 
 // CALL THE FUNCTIONS _____________________________________________________________________________
-button.on("click", updateVisualizations);
-form.on("submit",updateVisualizations);
+  // fireMap(filteredFire)
+  // earthquakeMap(filteredEarthquake)
+  // plotBarChart(filteredFire, filteredEarthquake)
+
+// D3 Listener ____________________________________________________________________________________
+button.on("click", filterData);
+form.on("submit",filterData);
