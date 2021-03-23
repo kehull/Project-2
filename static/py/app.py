@@ -1,12 +1,8 @@
 #import dependencies
-import numpy as np
-import datetime as dt
+import os
 import sqlalchemy
-from sqlalchemy.ext.automap import automap_base
-from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
-
-from flask import Flask, jsonify
+from flask import Flask, jsonify,request, render_template, redirect
 
 #database setup
 path="../../data/californiadisasters.sqlite"
@@ -34,6 +30,8 @@ for km in depth:
 app=Flask(__name__)
 #ignore key sort
 app.config['JSON_SORT_KEYS'] = False
+from flask_sqlalchemy import SQLAlchemy
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///{path}"
 
 # set 'Home' route 
 @app.route("/")
@@ -54,7 +52,7 @@ def welcome():
         # /api/v1.0/earthquake/classification/magnitude/classification/<classification>  returns earthquakes based on magnitude class
         #/api/v1.0/earthquake/classification/depth/classification/<classification>  returns earthquakes based on depth class
     
-    return f"error! Please input proper api path",404
+    return render_template("../../index.html")
 
 #set fire db route
 @app.route("/api/v1.0/fire")
