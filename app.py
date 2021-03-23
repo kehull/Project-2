@@ -30,8 +30,7 @@ for km in depth:
 app=Flask(__name__)
 #ignore key sort
 app.config['JSON_SORT_KEYS'] = False
-from flask_sqlalchemy import SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or f"sqlite:///{path}"
+
 
 # set 'Home' route 
 @app.route("/")
