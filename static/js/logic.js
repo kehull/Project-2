@@ -45,9 +45,73 @@ var button = d3.select("#filter");
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
-// grab full data sets
-var fireData = insertAPIcallhere
-var earthquakeData = insertAPIcallhere
+var fireData = []
+d3.json("https://california-disasters.herokuapp.com/api/v1.0/fire", function(response) {
+  for (var i =0; i < response["data"].length; i++) {
+    fireData.push(response["data"][i]["properties"])
+  }
+});
+
+var earthquakeData = []
+d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", function(response) {
+  for (var i =0; i < response["data"].length; i++) {
+    earthquakeData.push(response["data"][i]["properties"])
+    var currentEarthquake = response["data"][i]["properties"]
+    var long = currentEarthquake.latitude;
+    var lat = currentEarthquake.longitude;
+    var depth = currentEarthquake['depth(km)'];
+    var size = currentEarthquake.magnitude;
+    var loc = currentEarthquake.location;
+
+    if (size <= 5.9 && size > 5) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'icons/earthquake_icon_green.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Moderate)"
+    }
+    else if (size <= 6.9 && size > 5.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'icons/earthquake_icon_yellow.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Strong)"
+    }
+    else if (size <= 7.9 && size > 6.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'icons/earthquake_icon_orange.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Major)"
+    }
+    else if (size > 7.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'icons/earthquake_icon_red.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Great)"
+    }
+    
+    // Check for location property
+    if (size >= 5) {
+      var location = [lat, long];
+      // create marker
+      L.marker(location, {
+        icon:earthquakeIcon,
+      })
+        .bindPopup(
+          "<h3>Location: " + loc +
+            "</h3><h4>Magnitude: " +
+            size + " " + popupText +
+            "<br>Depth: " +
+            depth +
+            "km</h4>"
+        )
+        .addTo(myMap);
+    }
+  }
+  }
+});
 
 // set filtered data to default values
 var filteredFire = fireData // add default values
