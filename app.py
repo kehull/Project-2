@@ -5,7 +5,7 @@ from sqlalchemy import create_engine, func
 from flask import Flask, jsonify,request, render_template, redirect
 
 #database setup
-path="../../data/californiadisasters.sqlite"
+path="data/californiadisasters.sqlite"
 engine=create_engine(f"sqlite:///{path}")
 
 #create dates list for checking on for fire api's
@@ -52,7 +52,7 @@ def welcome():
         # /api/v1.0/earthquake/classification/magnitude/classification/<classification>  returns earthquakes based on magnitude class
         #/api/v1.0/earthquake/classification/depth/classification/<classification>  returns earthquakes based on depth class
     
-    return render_template("../../index.html")
+    return render_template("templates/index.html")
 
 #set fire db route
 @app.route("/api/v1.0/fire")
