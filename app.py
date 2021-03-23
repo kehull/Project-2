@@ -371,8 +371,4 @@ def depth_class(classification):
     
 #close out flask
 if __name__=='__main__':
-<<<<<<< HEAD
     app.run(debug=True)
-=======
-    app.run(debug=True)
->>>>>>> main
