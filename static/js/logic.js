@@ -85,28 +85,28 @@ function filterData() {
   var filteredEarthquake = earthquakeData
 
   if (inputValue_start !== null && inputValue_start !== '') {
-    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] > inputValue_start);
-    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) > inputValue_start);
+    filteredFire = filteredFire.filter(data => Date.parse(data["date_cre"]) > Date.parse(inputValue_start));
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["epoch_time"]) > Date.parse(inputValue_start));
   }
   else {
-    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] > '01/01/2013');
-    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) > '01/01/2013');
+    filteredFire = filteredFire.filter(data => Date.parse(data["date_cre"]) > Date.parse('01/01/2013'));
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["epoch_time"]) > Date.parse('01/01/2013'));
   };
 
   if (inputValue_end !== null && inputValue_end !== '') {
-    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] < inputValue_end);
-    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) < inputValue_end);
+    filteredFire = filteredFire.filter(data => Date.parse(data["date_cre"]) < Date.parse(inputValue_end));
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["epoch_time"]) < Date.parse(inputValue_end));
   }
   else {
-    filteredFire = filteredFire.filter(data => data["properties"]["date_cre"] < getToday());
-    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["properties"]["epoch_time"]) < getToday());
+    filteredFire = filteredFire.filter(data => Date.parse(data["date_cre"]) < Date.parse(getToday()));
+    filteredEarthquake = filteredEarthquake.filter(data => d.setUTCSeconds(data["epoch_time"]) < Date.parse(getToday()));
   };
 
-  if (inputValue_fire == null && inputValue_fire == '') {
+  if (inputValue_fire == null || inputValue_fire == '') {
     filteredFire = {}
   };
 
-  if (inputValue_earthquake == null && inputValue_earthquake == '') {
+  if (inputValue_earthquake == null || inputValue_earthquake == '') {
     filteredEarthquake = {}
   };
 
@@ -145,16 +145,19 @@ function filterData() {
 // };
 
 
-// // FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
-// function updateVisualizations() {
-//   // Update Fire Map
+// FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
+function updateVisualizations() {
   
-//   // Update Earthquake Map
+  console.log(filterData())
+  
+  // Update Fire Map
+  
+  // Update Earthquake Map
 
-//   // Update Bar Chart
-//   plotBarChart()
-// };
+  // Update Bar Chart
+  // plotBarChart()
+};
 
-// // CALL THE FUNCTIONS _____________________________________________________________________________
-// button.on("click", updateVisualizations);
-// form.on("submit",updateVisualizations);
+// CALL THE FUNCTIONS _____________________________________________________________________________
+button.on("click", updateVisualizations);
+form.on("submit",updateVisualizations);
