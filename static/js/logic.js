@@ -217,7 +217,61 @@ var heat= L.heatLayer(heatArray,{
 
 // CREATE EARTHQUAKE MAP ________________________________________________________________________
 function earthquakeMap(earthquake_Data) {
-  
+  for (var i =0; i < earthquake_Data.length; i++) {
+    
+    var long = earthquake_Data[i]["latitude"];
+    var lat = earthquake_Data[i]["longitude"];
+    var depth = earthquake_Data[i]["depth(km)"];
+    var size = earthquake_Data[i]["magnitude"];
+    var loc = earthquake_Data[i]["location"];
+
+    if (size <= 5.9 && size > 5) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_green.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Moderate)"
+    }
+    else if (size <= 6.9 && size > 5.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_yellow.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Strong)"
+    }
+    else if (size <= 7.9 && size > 6.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_orange.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Major)"
+    }
+    else if (size > 7.9) {
+      var earthquakeIcon = L.icon({
+        iconUrl:'static/js/icons/earthquake_icon_red.svg',
+        iconSize: [32,32]
+      })
+      var popupText = "(Great)"
+    }
+    
+    // Check for location property
+    if (size >= 5) {
+      var location = [lat, long];
+      // create marker
+      L.marker(location, {
+        icon:earthquakeIcon,
+      })
+        .bindPopup(
+          "<h3>Location: " + loc +
+            "</h3><h4>Magnitude: " +
+            size + " " + popupText +
+            "<br>Depth: " +
+            depth +
+            "km</h4>"
+        )
+        .addTo(myMap);
+    }
+  }
 };
 
 // CREATE BAR CHART _____________________________________________________________________________
@@ -240,8 +294,7 @@ function plotBarChart(filtered_Fire, filtered_Earthquake) {
   Plotly.newPlot("chartid", data, layout);
 };
 
-
-// FUNCTION TO UPDATE VISUALIZATIONS ______________________________________________________________
+// FUNCTION TO UPDATE VISUALIZATIONS ____________________________________________________________
 function updateVisualizations(filtered_Fire, filtered_Earthquake) {
   // [filtered_Fire, filtered_Earthquake] = filterData()
   
@@ -254,24 +307,24 @@ function updateVisualizations(filtered_Fire, filtered_Earthquake) {
   fireMap(filtered_Fire)
 
   // Run danger scorer
-  [county_names, danger_score] = dangerScores(filtered_Fire, filtered_Earthquake)
-  console.log("county name: ")
-  console.log(county_names)
-  console.log("danger score: ")
-  console.log(danger_score)
+  // [county_names, danger_score] = dangerScores(filtered_Fire, filtered_Earthquake)
+  // console.log("county name: ")
+  // console.log(county_names)
+  // console.log("danger score: ")
+  // console.log(danger_score)
 
   // Update Earthquake Map
-  // earthquakeMap(earthquake_Data)
+  earthquakeMap(filtered_Earthquake)
 
   // Update Bar Chart
   // plotBarChart()
 };
 
-// CALL THE FUNCTIONS _____________________________________________________________________________
+// CALL THE FUNCTIONS ___________________________________________________________________________
   // fireMap(filteredFire)
   // earthquakeMap(filteredEarthquake)
   // plotBarChart(filteredFire, filteredEarthquake)
 
-// D3 Listener ____________________________________________________________________________________
+// D3 Listener __________________________________________________________________________________
 button.on("click", filterData);
 form.on("submit",filterData);
