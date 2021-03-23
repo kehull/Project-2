@@ -1,30 +1,3 @@
-// CREATE COUNTIES MAP ______________________________________________________________________________
-// Creating map object
-var myMap = L.map("mapid", {
-  center: [36.7783, -119.4179],
-  zoom: 5
-});
-
-// Adding tile layer
-L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-  tileSize: 512,
-  maxZoom: 18,
-  zoomOffset: -1,
-  id: "mapbox/streets-v11",
-  accessToken: API_KEY
-}).addTo(myMap);
-
-// Use this link to get the geojson data.
-var link = "https://opendata.arcgis.com/datasets/35487e8c86644229bffdb5b0a4164d85_0.geojson";
-
-// Grabbing our GeoJSON data..
-d3.json(link, function(data) {
-  // Creating a GeoJSON layer with the retrieved data
-  L.geoJson(data).addTo(myMap);
-});
-
-
 // FILTER FUNCTIONS ______________________________________________________________________________
 //get current date
 function getToday() {
@@ -85,6 +58,35 @@ d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
 // set filtered data to default values
 var filteredFire = fireData // add default values
 var filteredEarthquake = earthquakeData // add default values
+
+// INITIALIZE COUNTIES MAP ______________________________________________________________________________
+// Creating map object
+var myMap = L.map("mapid", {
+  center: [36.7783, -119.4179],
+  zoom: 5
+});
+
+// Adding tile layer
+L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+  attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+  tileSize: 512,
+  maxZoom: 18,
+  zoomOffset: -1,
+  id: "mapbox/streets-v11",
+  accessToken: API_KEY
+}).addTo(myMap);
+
+// Use this link to get the geojson data.
+var link = "https://opendata.arcgis.com/datasets/35487e8c86644229bffdb5b0a4164d85_0.geojson";
+
+// Grabbing our GeoJSON data..
+d3.json(link, function(data) {
+  // Creating a GeoJSON layer with the retrieved data
+  L.geoJson(data).addTo(myMap);
+});
+
+// Initialize earthquake data
+
 
 // create filter function for datasets
 function filterData() {
@@ -258,7 +260,7 @@ function earthquakeMap(earthquake_Data) {
     if (size >= 5) {
       var location = [lat, long];
       // create marker
-      L.marker(location, {
+      var markerLayer = L.marker(location, {
         icon:earthquakeIcon,
       })
         .bindPopup(
@@ -297,11 +299,39 @@ function plotBarChart(filtered_Fire, filtered_Earthquake) {
 // FUNCTION TO UPDATE VISUALIZATIONS ____________________________________________________________
 function updateVisualizations(filtered_Fire, filtered_Earthquake) {
   // [filtered_Fire, filtered_Earthquake] = filterData()
+  // myMap.clearLayers();
+
+  myMap.eachLayer(function (layer) {myMap.removeLayer(layer);});
   
   console.log("fire data: ")
   console.log(filtered_Fire)
   console.log("earthquake data: ")
   console.log(filtered_Earthquake)
+
+  // Add Map
+  // var myMap = L.map("mapid", {
+  //   center: [36.7783, -119.4179],
+  //   zoom: 5
+  // });
+  
+  // Adding tile layer
+  L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+    tileSize: 512,
+    maxZoom: 18,
+    zoomOffset: -1,
+    id: "mapbox/streets-v11",
+    accessToken: API_KEY
+  }).addTo(myMap);
+  
+  // Use this link to get the geojson data.
+  var link = "https://opendata.arcgis.com/datasets/35487e8c86644229bffdb5b0a4164d85_0.geojson";
+  
+  // Grabbing our GeoJSON data..
+  d3.json(link, function(data) {
+    // Creating a GeoJSON layer with the retrieved data
+    L.geoJson(data).addTo(myMap);
+  });
   
   // Update Fire Map
   fireMap(filtered_Fire)
@@ -321,8 +351,8 @@ function updateVisualizations(filtered_Fire, filtered_Earthquake) {
 };
 
 // CALL THE FUNCTIONS ___________________________________________________________________________
-  // fireMap(filteredFire)
-  // earthquakeMap(filteredEarthquake)
+  fireMap(filteredFire)
+  earthquakeMap(filteredEarthquake)
   // plotBarChart(filteredFire, filteredEarthquake)
 
 // D3 Listener __________________________________________________________________________________
