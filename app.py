@@ -36,7 +36,7 @@ app.config['JSON_SORT_KEYS'] = False
 # set 'Home' route 
 @app.route("/")
 #create function that tells the server when user has entered home page
-def welcome():
+def home():
     print("Server has recieved request for 'Welcome' page...")
     
         # Available routes fire 
@@ -54,6 +54,10 @@ def welcome():
     
     # return f"error! Please input proper api path",404
     return render_template("index.html")
+
+@app.route("/api-documentation")
+def api_doc():
+    return render_template("api.html")
 
 
 #set fire db route
