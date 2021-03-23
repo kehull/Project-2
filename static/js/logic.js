@@ -133,7 +133,7 @@ function filterData() {
   //   filteredEarthquake = {}
   // };
 
-  
+
   updateVisualizations(filteredFire, filteredEarthquake)
 };
 
@@ -202,7 +202,7 @@ function updateVisualizations(filtered_Fire, filtered_Earthquake) {
 };
 
 // CALL THE FUNCTIONS _____________________________________________________________________________
-  fireMap(filteredFire)
+  // fireMap(filteredFire)
   // earthquakeMap(filteredEarthquake)
   // plotBarChart(filteredFire, filteredEarthquake)
 
