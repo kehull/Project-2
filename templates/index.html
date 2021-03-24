@@ -11,7 +11,7 @@
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="static\css\customstyle.css" />
 
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
@@ -34,9 +34,6 @@
     <div class="wrapper">
         <!-- Sidebar -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Navigation</h3>
-            </div>
 
             <ul class="list-unstyled components">
                 <li class="active">
@@ -75,43 +72,43 @@
                 <div class="fheading"><br>
                     <center>
                         <h5>Meet your developers!</h5>
+                        <p><small>Click the pictures to view each team members' LinkedIn profile.</small></p>
                     </center>
                 </div>
                 <div class="slider_fotorama fotorama" data-allowfullscreen="false" data-click="false" data-loop="true"
                     data-auto="true" data-shuffle="true" data-arrows="true" data-width="100%" data-fit="contain">
 
-                    <div data-img="headshots\ali.PNG" data-caption="Ali Emily">
+                    <div data-img="https://github.com/kehull/Project-2/blob/main/headshots/ali.PNG?raw=true" data-caption="<b>Ali Emily</b><br>Data Cleaning & Filtering<br>GIS admin<br>Javascript admin">
                         <div class="slider_inner">
-                            <a href="https://www.linkedin.com/in/alexandra-emily/" target="_blank"><img
-                                    src="headshots\ali.PNG" style="width:100%;"></a>
+                            <a href="https://github.com/kehull/Project-2/blob/main/headshots/ali.PNG?raw=true" target="_blank"><img
+                                    src="https://i.ibb.co/LdW1KZD/ali.png" style="width:100%;"></a>
                         </div>
                     </div>
 
-                    <div data-img="headshots\david.jpg" data-caption="David Fournie">
+                    <div data-img="https://github.com/kehull/Project-2/blob/main/headshots/david.jpg?raw=true" data-caption="<b>David Fournie</b><br>API admin<br>Bootstrap admin<br>Heroku admin">
                         <div class="slider_inner">
                             <a href="https://www.linkedin.com/in/david-r-fournie/" target="_blank"><img
-                                    src="headshots\david.jpg" style="width:100%"></a>
+                                    src="https://github.com/kehull/Project-2/blob/main/headshots/david.jpg?raw=true" style="width:100%"></a>
                         </div>
                     </div>
 
-                    <div data-img="headshots\janelle.jpeg" data-caption="Janelle Goddard">
+                    <div data-img="https://github.com/kehull/Project-2/blob/main/headshots/janelle.jpeg?raw=true" data-caption="<b>Janelle Goddard</b><br>Data Cleaning<br>Data Visualization<br>Highchart admin">
                         <div class="slider_inner">
                             <a href="https://www.linkedin.com/in/janelle-goddard-b4872816b/" target="_blank"><img
-                                    src="headshots\janelle.jpeg" style="width:100%"></a>
+                                    src="https://github.com/kehull/Project-2/blob/main/headshots/janelle.jpeg?raw=true" style="width:100%"></a>
                         </div>
                     </div>
 
-                    <div data-img="headshots\kelly.jpg" data-caption="Kelly Hull"> 
+                    <div data-img="https://github.com/kehull/Project-2/blob/main/headshots/kelly.jpg?raw=true" data-caption="<b>Kelly Hull</b><br>Web scraping<br>Data Visualization<br>Data Analyst<br>HTML/CSS admin"> 
                         <div class="slider_inner">
-                            <a href="https://www.linkedin.com/in/kehull/" target="_blank"><img
+                            <a href="https://github.com/kehull/Project-2/blob/main/headshots/kelly.jpg?raw=true" target="_blank"><img
                                     src="headshots\kelly.jpg" style="width:100%"></a>
                         </div>
                     </div>
                     
 
         </nav>
-        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-                </div>
+        
 
         <!-- Page Content -->
         <div id="content">
@@ -152,6 +149,8 @@
     </div>
 
     <h1>California Disasters</h1>
+
+    
 
 
 
@@ -194,8 +193,7 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-    
-    
+
     <!-- JS -->
     <script type="text/javascript" src="../static/js/logic.js"></script>
     
