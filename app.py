@@ -59,6 +59,10 @@ def home():
 def api_doc():
     return render_template("api.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 
 #set fire db route
 @app.route("/api/v1.0/fire")
