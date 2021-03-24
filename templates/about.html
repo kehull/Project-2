@@ -49,11 +49,41 @@
             </div>
             <div class="line"></div>
 
-            <p>
-                <strong>test test</strong>><br>
-                test test
+            <h4>Data:</h4>
+            <p>Data used in this project:
+                <ul>
+                    <li><a href="https://earthquake.usgs.gov/fdsnws/event/1/#parameters" target="blank">Earthquake data from USGS</a></li>
+                    <li><a href="https://www.fire.ca.gov/incidents/" target="blank">Wildfire data from Cal Fire</a></li>
+                    <li><a href="https://gis.data.ca.gov/datasets/CDTFA::city-and-county-boundaries/geoservice?geometry=-161.120%2C31.068%2C-77.492%2C43.274" target="blank">California county border shapes from the California State Geoportal</a></li>
+                </ul>
             </p>
 
+            <p>Wildfire csv file cleaned by Janelle earthquake csv cleaned by Ali, county data for earthquake locations webscraped in Python by Kelly using 
+                <a href="http://www.statsamerica.org/CityCountyFinder/Default.aspx" target="blank">City to County Finder by StatsAmerica</a>
+            and <a href="https://www.wikipedia.org/" target="blank">Wikipedia.</a></p>
+
+            <p>SQLite database created and populated by Kelly using. API created in Python by David.</p>
+
+            <p>Map created in Leaflet. Earthquakes mapped in Javascript by Kelly. SVGs for earthquake markers made by <a href="https://www.freepik.com" title="Freepik">
+                Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> and colored by Kelly. Fires mapped in Javascript by David, Ali, and Janelle.
+            County shape layer placed on map by Ali in Javascript. Data filtering function created by Ali in Javascript. Bar chart visualization created by
+        Janelle and Ali in Javascript using the <a href="https://www.highcharts.com/demo/bar-basic" target="blank">Highcharts JS library</a>.</p>
+
+        <p>Note regarding the wildfire visualization: while we are confident that the location information used in our analysis of the wildfires is
+            accurate, upon plotting the latitude/longitude data provided by Cal Fire, we noticed that many coordinates fell outside of California's borders, even in the ocean,
+            some as far away as North Carolina, or even off the coast of Spain. We believe the coordinate data was entered inaccurately for a number of wildfires.  
+            We are also suspicious that older data may have been entered inconsistently, as there are so few fires for years in the earlier part of the dataset.
+            Given more time, we would have used a web scraper or library to designate coordinates for each county in the dataset and re-plotted according to those coordinates, 
+            so that we could at least get a more accurate visualization of recent fires.
+        </p>
+
+            <p>Data analysis performed by Kelly in Python. Bar chart visualization created by Janelle and Ali in Javascript.</p>
+
+            <h4>Web Development</h4>
+            <p>Bootstrap development and Heroku deployment managed by David. HTML/CSS, website text, 
+                and <a href="https://fotorama.io/">Fotorama image carousel</a> managed by Kelly. Javascript managed by Ali.</p>
+
+            <p></p>
 
             
 
