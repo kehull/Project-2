@@ -8,7 +8,7 @@
 https://california-disasters.herokuapp.com/
 <br><br>
 
-# Notes on Development and Use
+## Notes on Development and Use
 
 
 <br><br>
@@ -73,4 +73,8 @@ To query on depth classification simply add "/depth/classification" and the clas
 
 Example:https://california-disasters.herokuapp.com/api/v1.0/earthquake/depth/classification/mid
 
-Happy quering!
+Happy quering! <br><br>
+
+## Website Preview
+![Website Preview](preview/california_disasters_preview.png)
+

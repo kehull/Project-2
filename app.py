@@ -14,6 +14,7 @@ dates_list=[]
 dates=engine.execute("SELECT date_created FROM WILDFIRES")
 for date in dates:
     dates_list.append(date[0])
+print(dates_list)
 
 #create counties list for checking on for fire api's
 county_list=[]
