@@ -10,6 +10,25 @@ https://california-disasters.herokuapp.com/
 
 ## Notes on Development and Use
 
+Data:
+Data used in this project:
+
+Earthquake data from USGS
+Wildfire data from Cal Fire
+California county border shapes from the California State Geoportal
+Wildfire csv file cleaned by Janelle earthquake csv cleaned by Ali, county data for earthquake locations webscraped in Python by Kelly using City to County Finder by StatsAmerica and Wikipedia.
+
+SQLite database created and populated by Kelly using. API created in Python by David.
+
+Map created in Leaflet. Earthquakes mapped in Javascript by Kelly. SVGs for earthquake markers made by Freepik from www.flaticon.com and colored by Kelly. Fires mapped in Javascript by David, Ali, and Janelle. County shape layer placed on map by Ali in Javascript. Data filtering function created by Ali in Javascript. Bar chart visualization created by Janelle and Ali in Javascript using the Highcharts JS library.
+
+Note regarding the wildfire visualization: while we are confident that the location information used in our analysis of the wildfires is accurate, upon plotting the latitude/longitude data provided by Cal Fire, we noticed that many coordinates fell outside of California's borders, even in the ocean, some as far away as North Carolina, or even off the coast of Spain. We believe the coordinate data was entered inaccurately for a number of wildfires. We are also suspicious that older data may have been entered inconsistently, as there are so few fires for years in the earlier part of the dataset. Given more time, we would have used a web scraper or library to designate coordinates for each county in the dataset and re-plotted according to those coordinates, so that we could at least get a more accurate visualization of recent fires.
+
+Data analysis performed by Kelly in Python. Bar chart visualization created by Janelle and Ali in Javascript.
+
+Web Development
+Bootstrap development and Heroku deployment managed by David. HTML/CSS, website text, and Fotorama image carousel managed by Kelly. Javascript managed by Ali.
+
 
 <br><br>
 
@@ -74,6 +93,9 @@ To query on depth classification simply add "/depth/classification" and the clas
 Example:https://california-disasters.herokuapp.com/api/v1.0/earthquake/depth/classification/mid
 
 Happy quering! <br><br>
+
+## Files Included
+The root of the directory conatins app.py which the application runs from, Procfile which runs the gunicorn for Heroku,Project_2.ipynb, used for cleaning data, the readme, and folders for different aspects of the project. The data folder contains all relevant csv, sqlite, and ipynb files that were used to display and modify data. The headshots contains headshot files used for fotorama. The prepwork contains our website sketch and our project proposal. The preview folder contains a screenshot of the website. The static folder contains all css, js, and py files used in our application and data modification, and the templates folder contains all the html files used for the website.
 
 ## Website Preview
 ![Website Preview](preview/california_disasters_preview.png)
