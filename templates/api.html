@@ -53,14 +53,14 @@
             <div class="line"></div>
 
             <p>
-                Base: <strong>https://california-disasters.herokuapp/api/v1.0</strong><br><br>
+                Base: <strong>https://california-disasters.herokuapp.com/api/v1.0</strong><br><br>
                 To connect to the fire and earthquake databases, simply add "fire" or "earthquake" to the end of the api base.<br><br>
-                Example Fire: <a href="https://california-disasters.herokuapp/api/v1.0/fire">https://california-disasters.herokuapp/api/v1.0/fire</a><br>
-                Example Earthquake: <a href="https://california-disasters.herokuapp/api/v1.0/earthquake">https://california-disasters.herokuapp/api/v1.0/earthquake</a><br><br>
+                Example Fire: <a href="https://california-disasters.herokuapp.com/api/v1.0/fire">https://california-disasters.herokuapp.com/api/v1.0/fire</a><br>
+                Example Earthquake: <a href="https://california-disasters.herokuapp.com/api/v1.0/earthquake">https://california-disasters.herokuapp.com/api/v1.0/earthquake</a><br><br>
                 In the fire db, the database can also be queried by county by adding "/county" and county name after the fire query.<br><br>
-                Example: <a href="https://california-disasters.herokuapp/api/v1.0/fire/county/yuba">https://california-disasters.herokuapp/api/v1.0/fire/yuba</a><br><br>
+                Example: <a href="https://california-disasters.herokuapp.com/api/v1.0/fire/county/yuba">https://california-disasters.herokuapp.com/api/v1.0/fire/yuba</a><br><br>
                 Furthermore, the fire db can be queried by date by adding "/date" and "mm-dd-yyyy" after fire. Months 1-9 are single letter entries. <br>
-                Example: <a href="https://california-disasters.herokuapp/api/v1.0/fire/date/8-3-2020">https://california-disasters.herokuapp/api/v1.0/fire/date/8-3-2020</a><br><br>
+                Example: <a href="https://california-disasters.herokuapp.com/api/v1.0/fire/date/8-3-2020">https://california-disasters.herokuapp.com/api/v1.0/fire/date/8-3-2020</a><br><br>
                 According to the Natinal Wildfire Coordinating Group, wildfires are classified into seven groups based on how many acres burned.<br><br>
                 <strong>Class A</strong>:"One-fourth acre or less" <br>
                 <strong>Class B</strong>:"More than one-fourth acre, but less than 10 acres"<br>
@@ -70,24 +70,24 @@
                 <strong>Class F</strong>:"1,000 acres or more, but less than 5,000 acres" <br>
                 <strong>Class G</strong>:"5,000 acres or more" <br> <br>
                 The Fire database has been designed to query based on these six classes. Simply add "/classification" and the classification letter at the end of the fire query.<br>
-                Example: <a href="https://california-disasters.herokuapp/api/v1.0/fire/classification/g">https://california-disasters.herokuapp/api/v1.0/fire/classification/a</a><br><br>
+                Example: <a href="https://california-disasters.herokuapp.com/api/v1.0/fire/classification/g">https://california-disasters.herokuapp.com/api/v1.0/fire/classification/a</a><br><br>
                 The Earthquake database is queried in similar fashions. To query the database on earthquake magnitude, simply add "/magnitude" and the richter-scale value(1-10) of the earthquake to the earthquake query.<br>
-                Example: <a href="https://california-disasters.herokuapp/api/v1.0/earthquake/magnitude/5">https://california-disasters.herokuapp/api/v1.0/earthquake/magnitude/5</a><br><br>
+                Example: <a href="https://california-disasters.herokuapp.com/api/v1.0/earthquake/magnitude/5">https://california-disasters.herokuapp.com/api/v1.0/earthquake/magnitude/5</a><br><br>
                 Depth has also been included as a query option simply add "/depth" and the depth km to the end of earthquake query. Note: km values range 1 to 28.<br>
-                Example: <a href="https://california-disasters.herokuapp/api/v1.0/earthquake/depth/15">https://california-disasters.herokuapp/api/v1.0/earthquake/depth/15</a><br><br>
+                Example: <a href="https://california-disasters.herokuapp.com/api/v1.0/earthquake/depth/15">https://california-disasters.herokuapp.com/api/v1.0/earthquake/depth/15</a><br><br>
                 Earthquakes are classified both on their magnitude and depth. Earthquake magnitudes are divided into four categories:<br>
                 <strong>Moderate</strong>: Magnitude less than 6<br>
                 <strong>Strong</strong>: Magnitude 6-7(exclusive)<br>
                 <strong>Major</strong>: Magnitude 7-8(exclusive)<br>
                 <strong>Great</strong> Magnitude 8 and above<br><br>
                 To query the earthquake database on magnitude classification, simply add "/magnitude/classification" and the classification.<br><br>
-                Example:<a href="https://california-disasters.herokuapp/api/v1.0/earthquake/magnitude/classification/great">https://california-disasters.herokuapp/api/v1.0/earthquake/magnitude/classification.great</a><br><br>
+                Example:<a href="https://california-disasters.herokuapp.com/api/v1.0/earthquake/magnitude/classification/great">https://california-disasters.herokuapp.com/api/v1.0/earthquake/magnitude/classification.great</a><br><br>
                 Likewise, earthquakes are also categorized by depth. Earthquake depths are divided into three categories from deep(minor earthquake) to shallow(major earthquake):<br><br>
                 <strong>Deep</strong>: More than 33km deep<br>
                 <strong>Mid</strong>: Between 17km and 33km deep<br>
                 <strong>Shallow</strong>: Less than 17 km<br><br>
                 To query on depth classification simply add "/depth/classification" and the classification to the earthquake query.<br><br>
-                Example:<a href="https://california-disasters.herokuapp/api/v1.0/earthquake/depth/classification/mid">https://california-disasters.herokuapp/api/v1.0/earthquake/depth/classification/mid</a><br><br>
+                Example:<a href="https://california-disasters.herokuapp.com/api/v1.0/earthquake/depth/classification/mid">https://california-disasters.herokuapp.com/api/v1.0/earthquake/depth/classification/mid</a><br><br>
                 Happy quering!
 
 
