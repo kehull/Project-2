@@ -40,17 +40,17 @@ var button = d3.select("#filter");
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
-// var fireData = d3.json("http://127.0.0.1:5000/api/v1.0/fire")
+var fireData = d3.json("http://127.0.0.1:5000/api/v1.0/fire")
 var fireData = []
-// d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
-d3.json("https://california-disasters.herokuapp.com/api/v1.0/fire", function(response) {
+d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
+// d3.json("https://california-disasters.herokuapp.com/api/v1.0/fire", function(response) {
   for (var i =0; i < response["data"].length; i++) {
     fireData.push(response["data"][i]["properties"])
   }
 });
 var earthquakeData = []
-// d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
-d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", function(response) {
+d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
+// d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", function(response) {
   for (var i =0; i < response["data"].length; i++) {
     earthquakeData.push(response["data"][i]["properties"])
   }
@@ -205,14 +205,21 @@ function dangerScores(filtered_Fire, filtered_Earthquake){
 function fireMap(fire_Data) {
 var heatArray=[];
 
+
 for (i=0; i< fire_Data.length; i++) {
   // console.log(fire_Data[i])
   heatArray.push([fire_Data[i]["lat"],filteredFire[i]["lng"]])
+  
 }
 // console.log(heatArray);
 var heat= L.heatLayer(heatArray,{
-  radius: 20,
-  blur:2
+  radius: 10,
+  blur:5,
+  maxZoom:7,
+  minOpacity:.4
+  
+  
+  
 }).addTo(myMap);
 
 };
