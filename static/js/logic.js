@@ -40,16 +40,17 @@ var button = d3.select("#filter");
 // find the form (id in HTML is form-group)
 var form = d3.select("#form-group");
 
-// var fireData = d3.json("http://127.0.0.1:5000/api/v1.0/fire")
 var fireData = []
-d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
+// d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
+d3.json("https://california-disasters.herokuapp.com/api/v1.0/fire", function(response) {
   for (var i =0; i < response["data"].length; i++) {
     fireData.push(response["data"][i]["properties"])
   }
 });
 
 var earthquakeData = []
-d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
+// d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
+d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", function(response) {
   for (var i =0; i < response["data"].length; i++) {
     earthquakeData.push(response["data"][i]["properties"])
   }
@@ -280,9 +281,9 @@ function earthquakeMap(earthquake_Data) {
 function plotBarChart(filtered_Fire, filtered_Earthquake) {
   // // get data
   // [counties, points] = dangerScores(filtered_Fire, filtered_Earthquake)
-  var counties = ["county 1", "county 2", "county 3", "county 4", "county 5"]
-  var fire_scores = [25,45,93,2,1]
-  var other_scores = [0,0,0,0,0]
+  var counties = ["Ventura", "Tehama", "Riverside", "Lassen", "Los Angeles", "Yolo", "Santa Cruz", "San Mateo", "Nevada", "Kings"]
+  var fire_scores = [926.6666667,926.6666667,3153.333333,1393.333333,1286.666667,180,66.66666667,73.33333333, 93.33333333,80]
+  var other_scores = [12,12,42,19,17,2,1,1,1,1]
   // var trace1 = {
   //   x: counties,
   //   y: points,
@@ -306,7 +307,7 @@ function plotBarChart(filtered_Fire, filtered_Earthquake) {
       text: 'Top 5 Disastrous Counties in California'
     },
     xAxis: {
-      categories: ["fire score", "earthquake score"],
+      categories: ["fire severity score", "fire count"],
       title: {
         text: null
       }
@@ -360,6 +361,21 @@ function plotBarChart(filtered_Fire, filtered_Earthquake) {
     }, {
       name: counties[4],
       data: [fire_scores[4], other_scores[4]]
+    },{
+      name: counties[5],
+      data: [fire_scores[5], other_scores[5]]
+    }, {
+      name: counties[6],
+      data: [fire_scores[6], other_scores[6]]
+    }, {
+      name: counties[7],
+      data: [fire_scores[7], other_scores[7]]
+    }, {
+      name: counties[8],
+      data: [fire_scores[8], other_scores[8]]
+    }, {
+      name: counties[9],
+      data: [fire_scores[9], other_scores[9]]
     }]
   };
 
