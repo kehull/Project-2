@@ -170,6 +170,9 @@ a.article:hover {
     right: 0;
     background:#fff;
 }
+strong {
+    font-weight: 700;
+  }
 
 #content.active {
     width: 100%;
