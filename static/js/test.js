@@ -1,4 +1,7 @@
-firescores = d3.csv("../../data/fire_danger_csv.csv");
+
+d3.csv('../data/fire_data.csv',function(data){
+console.log(data);
+});
 
 var filtered_Fire = []
 d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
