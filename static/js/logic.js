@@ -180,6 +180,7 @@ function dangerScores(filtered_Fire, filtered_Earthquake){
           }
           else {
             array[filtered_Fire[i]["county"]] = parseInt(firescores[j]["fire_danger_score"])
+
           };
       };
     };
@@ -381,6 +382,7 @@ function plotBarChart(filtered_Fire, filtered_Earthquake) {
 
   Highcharts.chart('stackedbarchart',options);
 
+
 };
 
 // FUNCTION TO UPDATE VISUALIZATIONS ____________________________________________________________
@@ -435,6 +437,7 @@ function updateVisualizations(filtered_Fire, filtered_Earthquake) {
 
   // Update Bar Chart
   plotBarChart(filtered_Fire, filtered_Earthquake)
+
 };
 
 // CALL THE FUNCTIONS ___________________________________________________________________________
