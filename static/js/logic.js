@@ -175,10 +175,11 @@ function dangerScores(filtered_Fire, filtered_Earthquake){
           // dict["Id"] = filtered_Fire[i]["county"]
           // dict["score"] = firescores[j]["fire_danger_score"]
           if (array.hasOwnProperty(filtered_Fire[i]["county"])) {
-            array[filtered_Fire[i]["county"]] = array[filtered_Fire[i]["county"]] + firescores[j]["fire_danger_score"]
+            array[filtered_Fire[i]["county"]] = array[filtered_Fire[i]["county"]] + parseInt(firescores[j]["fire_danger_score"])
           }
           else {
-            array[filtered_Fire[i]["county"]] = firescores[j]["fire_danger_score"]
+            array[filtered_Fire[i]["county"]] = parseInt(firescores[j]["fire_danger_score"])
+
           };
       };
     };
@@ -278,22 +279,94 @@ function earthquakeMap(earthquake_Data) {
 
 // CREATE BAR CHART _____________________________________________________________________________
 function plotBarChart(filtered_Fire, filtered_Earthquake) {
-  // get data
-  [counties, points] = dangerScores(filtered_Fire, filtered_Earthquake)
+  // // get data
+  // [counties, points] = dangerScores(filtered_Fire, filtered_Earthquake)
+  var counties = ["county 1", "county 2", "county 3", "county 4", "county 5"]
+  var fire_scores = [25,45,93,2,1]
+  var other_scores = [0,0,0,0,0]
+  // var trace1 = {
+  //   x: counties,
+  //   y: points,
+  //   type: "bar"
+  // };
 
-  var trace1 = {
-    x: counties,
-    y: points,
-    type: "bar"
+  // var data = [trace1];
+
+  // var layout = {
+  //   title: "'Bar' Chart"
+  // };
+
+  // Plotly.newPlot("chartid", data, layout);
+
+  var options = {
+    chart: {
+      //renderTo: '#stackedbarchart',
+      type: 'bar'
+    },
+    title: {
+      text: 'Top 5 Disastrous Counties in California'
+    },
+    xAxis: {
+      categories: ["fire score", "earthquake score"],
+      title: {
+        text: null
+      }
+    },
+    yAxis: {
+      min: 0,
+      title: {
+        text: 'Fire Danger Score',
+        align: 'high'
+      },
+      labels: {
+        overflow: 'justify'
+      }
+    },
+    tooltip: {
+      valueSuffix: ''
+    },
+    plotOptions: {
+      bar: {
+        dataLabels: {
+          enabled: true
+        }
+      }
+    },
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'top',
+      x: -40,
+      y: 80,
+      floating: true,
+      borderWidth: 1,
+      backgroundColor: '#FFFFFF',
+      shadow: true
+    },
+    credits: {
+      enabled: false
+    },
+    series: [{
+      name: counties[0],
+      data: [fire_scores[0], other_scores[0]]
+    }, {
+      name: counties[1],
+      data: [fire_scores[1], other_scores[1]]
+    }, {
+      name: counties[2],
+      data: [fire_scores[2], other_scores[2]]
+    }, {
+      name: counties[3],
+      data: [fire_scores[3], other_scores[3]]
+    }, {
+      name: counties[4],
+      data: [fire_scores[4], other_scores[4]]
+    }]
   };
 
-  var data = [trace1];
+  Highcharts.chart('stackedbarchart',options);
 
-  var layout = {
-    title: "'Bar' Chart"
-  };
 
-  Plotly.newPlot("chartid", data, layout);
 };
 
 // FUNCTION TO UPDATE VISUALIZATIONS ____________________________________________________________
@@ -347,7 +420,8 @@ function updateVisualizations(filtered_Fire, filtered_Earthquake) {
   earthquakeMap(filtered_Earthquake)
 
   // Update Bar Chart
-  // plotBarChart()
+  plotBarChart(filtered_Fire, filtered_Earthquake)
+
 };
 
 // CALL THE FUNCTIONS ___________________________________________________________________________
