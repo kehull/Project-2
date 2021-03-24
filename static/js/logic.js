@@ -42,20 +42,19 @@ var form = d3.select("#form-group");
 
 // var fireData = d3.json("http://127.0.0.1:5000/api/v1.0/fire")
 var fireData = []
+// d3.json("http://127.0.0.1:5000/api/v1.0/fire", function(response) {
 d3.json("https://california-disasters.herokuapp.com/api/v1.0/fire", function(response) {
   for (var i =0; i < response["data"].length; i++) {
     fireData.push(response["data"][i]["properties"])
   }
 });
-
 var earthquakeData = []
+// d3.json("http://127.0.0.1:5000/api/v1.0/earthquake", function(response) {
 d3.json("https://california-disasters.herokuapp.com/api/v1.0/earthquake", function(response) {
   for (var i =0; i < response["data"].length; i++) {
     earthquakeData.push(response["data"][i]["properties"])
   }
 });
-
-// set filtered data to default values
 var filteredFire = fireData // add default values
 var filteredEarthquake = earthquakeData // add default values
 
