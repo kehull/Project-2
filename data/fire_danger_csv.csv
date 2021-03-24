@@ -1,399 +1,436 @@
 incident_name,county,fire_danger_score
-Pala Fire,San Diego,86.66666666666667
+Pala Fire,San Diego,60.0
 Sand Fire,Amador,93.33333333333333
-Sand Fire,El Dorado,100.0
-Atlas Fire (Southern LNU Complex),Napa,93.33333333333333
-Atlas Fire (Southern LNU Complex),Solano,80.0
-Tubbs Fire (Central LNU Complex),Napa,73.33333333333333
-Tubbs Fire (Central LNU Complex),Sonoma,73.33333333333333
-Nuns / Adobe / Norrbom/ Pressley / Partrick Fires / Oakmont (Central LNU Complex),Napa,66.66666666666667
-Nuns / Adobe / Norrbom/ Pressley / Partrick Fires / Oakmont (Central LNU Complex),Sonoma,66.66666666666667
-Cascade Fire (Wind Complex),Yuba,46.666666666666664
+Sand Fire,El Dorado,93.33333333333333
+Atlas Fire (Southern LNU Complex),Napa,100.0
+Atlas Fire (Southern LNU Complex),Solano,100.0
+Tubbs Fire (Central LNU Complex),Napa,93.33333333333333
+Tubbs Fire (Central LNU Complex),Sonoma,93.33333333333333
+Nuns / Adobe / Norrbom/ Pressley / Partrick Fires / Oakmont (Central LNU Complex),Napa,100.0
+Nuns / Adobe / Norrbom/ Pressley / Partrick Fires / Oakmont (Central LNU Complex),Sonoma,100.0
+Cascade Fire (Wind Complex),Yuba,93.33333333333333
 Redwood Valley Fire (Mendocino Lake Complex),Mendocino,93.33333333333333
-Lobo Fire (Wind Complex),Nevada,93.33333333333333
-Thomas Fire,Santa Barbara,53.333333333333336
-Thomas Fire,Ventura,93.33333333333333
-Drum Fire,Santa Barbara,80.0
-Coast Fire,Santa Barbara,100.0
-Riverbottom Fire,Riverside,80.0
-Holiday Fire,El Dorado,100.0
+Lobo Fire (Wind Complex),Nevada,80.0
+Thomas Fire,Santa Barbara,100.0
+Thomas Fire,Ventura,100.0
+Drum Fire,Santa Barbara,73.33333333333333
+Coast Fire,Santa Barbara,73.33333333333333
+Riverbottom Fire,Riverside,60.0
+Holiday Fire,El Dorado,60.0
 Grant Fire,Alameda,80.0
-Creek Fire,San Luis Obispo,86.66666666666667
-Stoll Fire,Tehama,53.333333333333336
-Pawnee Fire,Lake,100.0
-Horse Fire,Calaveras,80.0
-Waverly Fire,San Joaquin,46.666666666666664
-Hyatt Fire,Lassen,100.0
+Creek Fire,San Luis Obispo,46.666666666666664
+Stoll Fire,Tehama,86.66666666666667
+Pawnee Fire,Lake,93.33333333333333
+Horse Fire,Calaveras,53.333333333333336
+Waverly Fire,San Joaquin,93.33333333333333
+Hyatt Fire,Lassen,80.0
 County Fire,Napa,100.0
-County Fire,Yolo,86.66666666666667
-West Fire,San Diego,53.333333333333336
-Klamathon Fire,Siskiyou,100.0
-Irish Fire,Amador,46.666666666666664
-Holiday Fire,Santa Barbara,100.0
+County Fire,Yolo,100.0
+West Fire,San Diego,80.0
+Klamathon Fire,Siskiyou,93.33333333333333
+Irish Fire,Amador,80.0
+Holiday Fire,Santa Barbara,86.66666666666667
 Spring 2 Fire,Lake,53.333333333333336
-Carder Fire,Lake,73.33333333333333
-Carr Fire,Shasta,46.666666666666664
-Carr Fire,Trinity,46.666666666666664
+Carder Fire,Lake,53.333333333333336
+Carr Fire,Shasta,100.0
+Carr Fire,Trinity,100.0
 Marsh Fire,Contra Costa,73.33333333333333
-Wagner Fire,Mariposa,93.33333333333333
-Ranch Fire (Mendocino Complex),Colusa,86.66666666666667
-Ranch Fire (Mendocino Complex),Glenn,46.666666666666664
-Ranch Fire (Mendocino Complex),Lake,80.0
-Ranch Fire (Mendocino Complex),Mendocino,46.666666666666664
-River Fire (Mendocino Complex),Colusa,60.0
+Wagner Fire,Mariposa,46.666666666666664
+Ranch Fire (Mendocino Complex),Colusa,100.0
+Ranch Fire (Mendocino Complex),Glenn,100.0
+Ranch Fire (Mendocino Complex),Lake,100.0
+Ranch Fire (Mendocino Complex),Mendocino,100.0
+River Fire (Mendocino Complex),Colusa,100.0
 River Fire (Mendocino Complex),Lake,100.0
-River Fire (Mendocino Complex),Mendocino,66.66666666666667
+River Fire (Mendocino Complex),Mendocino,100.0
 Steele Fire,Napa,86.66666666666667
-Omega Fire,El Dorado,86.66666666666667
-Holy Fire,Orange,53.333333333333336
-Delta Fire,Shasta,86.66666666666667
-Delta Fire,Trinity,80.0
-Meyers Fire,El Dorado,80.0
-Camp Fire,Butte,73.33333333333333
-Hill Fire,Ventura,53.333333333333336
-Woolsey Fire,Los Angeles,46.666666666666664
+Omega Fire,El Dorado,53.333333333333336
+Holy Fire,Orange,93.33333333333333
+Delta Fire,Shasta,100.0
+Delta Fire,Trinity,100.0
+Meyers Fire,El Dorado,46.666666666666664
+Camp Fire,Butte,93.33333333333333
+Hill Fire,Ventura,93.33333333333333
+Woolsey Fire,Los Angeles,100.0
 Woolsey Fire,Ventura,100.0
-Peak Fire,Ventura,66.66666666666667
-IronGate Fire,Siskiyou,80.0
-Merced Fire ,Merced,73.33333333333333
-Coyote Fire,Santa Clara,80.0
-Hollow Fire,San Joaquin,53.333333333333336
-Bikeway Fire,Alameda,53.333333333333336
-Fellow Fire,Contra Costa,60.0
-Ranch Fire,Shasta,93.33333333333333
-Snowstorm Fire,Lassen,66.66666666666667
-Gillis Fire,San Luis Obispo,73.33333333333333
-Sargent Fire,Monterey,73.33333333333333
-Gibbel Fire ,Riverside,86.66666666666667
-Border Fire,San Diego,60.0
-Lincoln Fire,Riverside,46.666666666666664
-Mid Fire,Alameda,93.33333333333333
-Orange fire,Riverside,93.33333333333333
-Jasper Fire,State of Nevada,73.33333333333333
-Doyle Fire,Lassen,46.666666666666664
-South Fire ,Ventura,80.0
-Milton Fire ,Stanislaus,80.0
+Peak Fire,Ventura,73.33333333333333
+IronGate Fire,Siskiyou,53.333333333333336
+Merced Fire ,Merced,66.66666666666667
+Coyote Fire,Santa Clara,53.333333333333336
+Hollow Fire,San Joaquin,86.66666666666667
+Bikeway Fire,Alameda,46.666666666666664
+Fellow Fire,Contra Costa,46.666666666666664
+Ranch Fire,Shasta,46.666666666666664
+Snowstorm Fire,Lassen,60.0
+Gillis Fire,San Luis Obispo,66.66666666666667
+Sargent Fire,Monterey,60.0
+Gibbel Fire ,Riverside,46.666666666666664
+Border Fire,San Diego,53.333333333333336
+Lincoln Fire,Riverside,60.0
+Mid Fire,Alameda,46.666666666666664
+Orange fire,Riverside,53.333333333333336
+Jasper Fire,State of Nevada,80.0
+Doyle Fire,Lassen,80.0
+South Fire ,Ventura,60.0
+Milton Fire ,Stanislaus,60.0
 Aborn Fire,Santa Clara,53.333333333333336
-Madera Fire ,Madera,46.666666666666664
-Meadow Fire,Riverside,46.666666666666664
+Madera Fire ,Madera,60.0
+Meadow Fire,Riverside,53.333333333333336
 Goose 2 Fire,Modoc,66.66666666666667
-Vista Fire,San Diego,80.0
-Rains Fire,Stanislaus,80.0
-Whiskey Fire,Calaveras,100.0
-Tucker Fire,Modoc,60.0
-Range Fire,Santa Barbara,86.66666666666667
-Mill Fire,Monterey,80.0
-Carson Fire,El Dorado,80.0
-Caliente Fire,San Diego,100.0
+Vista Fire,San Diego,46.666666666666664
+Rains Fire,Stanislaus,46.666666666666664
+Whiskey Fire,Calaveras,60.0
+Tucker Fire,Modoc,93.33333333333333
+Range Fire,Santa Barbara,60.0
+Mill Fire,Monterey,73.33333333333333
+Carson Fire,El Dorado,46.666666666666664
+Caliente Fire,San Diego,86.66666666666667
 Browns Fire,Sacramento,53.333333333333336
-Prairie Fire ,Sacramento,60.0
-Meadow Fire (Not a CAL FIRE incident),Modoc,46.666666666666664
-Marsh Complex,Contra Costa,93.33333333333333
-Five Fire,Los Angeles,46.666666666666664
-La Barisa Fire,San Bernardino,80.0
-Caliente Fire,Kern,80.0
-Toro Fire ,Riverside,46.666666666666664
-Golf Fire,Lake,86.66666666666667
-Preston Fire,Tuolumne,53.333333333333336
-W1 McDonald Fire,Lassen,73.33333333333333
-Ward Fire,State of Oregon,60.0
-Heavy Range Fire,Yolo,93.33333333333333
-Radio Fire,Riverside,73.33333333333333
-Lower Fire,Shasta,46.666666666666664
-Moose Fire,Mendocino,93.33333333333333
-Timm Fire ,Solano,80.0
-Greenstone Fire ,El Dorado,93.33333333333333
-Spring Fire ,Colusa,93.33333333333333
-Cottage Fire,Shasta,100.0
-Border 9 Fire,San Diego,93.33333333333333
-Patterson Fire,El Dorado,60.0
-Border 8 Fire,Mexico,80.0
-Patterson Fire,Alameda,80.0
-Mountain Fire,Shasta,80.0
-Yucca Fire,Riverside,80.0
-Horse Fire,Lassen,80.0
-Long Valley Fire ,Lassen,60.0
-Ivy Fire,Riverside,93.33333333333333
-Border 10 Fire,Mexico,73.33333333333333
+Prairie Fire ,Sacramento,53.333333333333336
+Meadow Fire (Not a CAL FIRE incident),Modoc,53.333333333333336
+Marsh Complex,Contra Costa,73.33333333333333
+Five Fire,Los Angeles,80.0
+La Barisa Fire,San Bernardino,46.666666666666664
+Caliente Fire,Kern,46.666666666666664
+Toro Fire ,Riverside,53.333333333333336
+Golf Fire,Lake,46.666666666666664
+Preston Fire,Tuolumne,46.666666666666664
+W1 McDonald Fire,Lassen,80.0
+Ward Fire,State of Oregon,80.0
+Heavy Range Fire,Yolo,46.666666666666664
+Radio Fire,Riverside,46.666666666666664
+Lower Fire,Shasta,53.333333333333336
+Moose Fire,Mendocino,73.33333333333333
+Timm Fire ,Solano,53.333333333333336
+Greenstone Fire ,El Dorado,46.666666666666664
+Spring Fire ,Colusa,46.666666666666664
+Cottage Fire,Shasta,80.0
+Border 9 Fire,San Diego,53.333333333333336
+Patterson Fire,El Dorado,46.666666666666664
+Border 8 Fire,Mexico,66.66666666666667
+Patterson Fire,Alameda,60.0
+Mountain Fire,Shasta,86.66666666666667
+Yucca Fire,Riverside,46.666666666666664
+Horse Fire,Lassen,66.66666666666667
+Long Valley Fire ,Lassen,80.0
+Ivy Fire,Riverside,53.333333333333336
+Border 10 Fire,Mexico,46.666666666666664
 Border 10 Fire,San Diego,46.666666666666664
 Sage Fire,Riverside,46.666666666666664
-R-1 Fire,Lassen,66.66666666666667
-Carroll Fire,Alameda,80.0
-Jolon Fire,Monterey,73.33333333333333
-Snail Fire,Ventura,86.66666666666667
-Mines Fire,Alameda,80.0
-Antelope Fire,San Benito,46.666666666666664
-Telephone Fire,San Bernardino,46.666666666666664
+R-1 Fire,Lassen,86.66666666666667
+Carroll Fire,Alameda,46.666666666666664
+Jolon Fire,Monterey,53.333333333333336
+Snail Fire,Ventura,80.0
+Mines Fire,Alameda,46.666666666666664
+Antelope Fire,San Benito,60.0
+Telephone Fire,San Bernardino,60.0
 Country Fire,El Dorado,53.333333333333336
-Deer Fire,Santa Cruz,66.66666666666667
-Tenaja,Riverside,46.666666666666664
+Deer Fire,Santa Cruz,46.666666666666664
+Tenaja,Riverside,80.0
 Glass Fire,Lake,46.666666666666664
-Foster Fire ,San Benito,73.33333333333333
-Red Bank Fire,Tehama,53.333333333333336
-Flood Fire ,San Joaquin,93.33333333333333
-Henthorne Fire,Trinity,46.666666666666664
-South Fire,Tehama,46.666666666666664
-Lone Fire,Modoc,46.666666666666664
+Foster Fire ,San Benito,46.666666666666664
+Red Bank Fire,Tehama,93.33333333333333
+Flood Fire ,San Joaquin,53.333333333333336
+Henthorne Fire,Trinity,66.66666666666667
+South Fire,Tehama,93.33333333333333
+Lone Fire,Modoc,93.33333333333333
 Cow Fire,Inyo,80.0
-Taboose Fire,Inyo,53.333333333333336
-Forbestown Fire,Butte,46.666666666666664
-R-6 Fire,Lassen,53.333333333333336
-Kidder 2 Fire,Siskiyou,46.666666666666664
-Rams Horn Fire,Trinity,86.66666666666667
+Taboose Fire,Inyo,93.33333333333333
+Forbestown Fire,Butte,60.0
+R-6 Fire,Lassen,73.33333333333333
+Kidder 2 Fire,Siskiyou,66.66666666666667
+Rams Horn Fire,Trinity,80.0
 Oak Fire,Lake,53.333333333333336
-Swedes Fire,Butte,60.0
-Duzel Fire,Siskiyou,100.0
-Sycamore Fire,Riverside,46.666666666666664
-McMurray Fire,Santa Barbara,86.66666666666667
-Bailey Fire,Riverside,66.66666666666667
-Bridge Fire,Stanislaus,60.0
-Bautista Fire,Riverside,73.33333333333333
-Reservoir Fire,Santa Clara,80.0
-Lopez Fire,San Luis Obispo,86.66666666666667
-Kennedy Fire,Riverside,60.0
-Tulloch Fire,Tuolumne,100.0
-Cow Fire,Shasta,53.333333333333336
-Electra Fire,Amador,66.66666666666667
-Willow Fire,San Diego,66.66666666666667
-Hwy Fire,Butte,80.0
-Chaparral Fire,El Dorado,53.333333333333336
-Warren Fire,Riverside,93.33333333333333
-Del Fire,Stanislaus,86.66666666666667
-Elk Fire,Glenn,86.66666666666667
-American Fire,Napa,86.66666666666667
-Point Fire ,Santa Clara,80.0
-Dales Fire,Tehama,80.0
-Little Fire,Alameda,80.0
-Cross Fire,Monterey,100.0
-Cross Fire,San Luis Obispo,93.33333333333333
-Corning Fire ,Tehama,86.66666666666667
-Inghram Fire,Tehama,73.33333333333333
-Merrill Fire,Contra Costa,93.33333333333333
+Swedes Fire,Butte,80.0
+Duzel Fire,Siskiyou,46.666666666666664
+Sycamore Fire,Riverside,60.0
+McMurray Fire,Santa Barbara,80.0
+Bailey Fire,Riverside,46.666666666666664
+Bridge Fire,Stanislaus,46.666666666666664
+Bautista Fire,Riverside,66.66666666666667
+Reservoir Fire,Santa Clara,66.66666666666667
+Lopez Fire,San Luis Obispo,66.66666666666667
+Kennedy Fire,Riverside,53.333333333333336
+Tulloch Fire,Tuolumne,53.333333333333336
+Cow Fire,Shasta,46.666666666666664
+Electra Fire,Amador,46.666666666666664
+Willow Fire,San Diego,53.333333333333336
+Hwy Fire,Butte,66.66666666666667
+Chaparral Fire,El Dorado,46.666666666666664
+Warren Fire,Riverside,46.666666666666664
+Del Fire,Stanislaus,46.666666666666664
+Elk Fire,Glenn,53.333333333333336
+American Fire,Napa,66.66666666666667
+Point Fire ,Santa Clara,46.666666666666664
+Dales Fire,Tehama,46.666666666666664
+Little Fire,Alameda,46.666666666666664
+Cross Fire,Monterey,86.66666666666667
+Cross Fire,San Luis Obispo,86.66666666666667
+Corning Fire ,Tehama,53.333333333333336
+Inghram Fire,Tehama,46.666666666666664
+Merrill Fire,Contra Costa,53.333333333333336
 Eagle Fire,Riverside,46.666666666666664
-Reche Fire,Riverside,93.33333333333333
-Plains Fire,Shasta,80.0
-Wolf Fire,Riverside,100.0
-Saddle Ridge Fire,Los Angeles,80.0
-Bitter Fire,San Luis Obispo,80.0
-Olivas Fire,Ventura,53.333333333333336
-Horse Fire,Lassen,73.33333333333333
-Johnson Fire ,Riverside,80.0
-Fairmont Fire,San Diego,80.0
-Real Fire,Santa Barbara,73.33333333333333
-Mud Fire ,Fresno,53.333333333333336
-Beaumont Fire,San Bernardino,73.33333333333333
-Palisades Fire,Los Angeles,66.66666666666667
-Kincade Fire,Sonoma,46.666666666666664
-Nelson Fire ,Butte,46.666666666666664
-Cabrillo Fire,San Mateo,73.33333333333333
-Mines Fire,Alameda,100.0
+Reche Fire,Riverside,73.33333333333333
+Plains Fire,Shasta,53.333333333333336
+Wolf Fire,Riverside,66.66666666666667
+Saddle Ridge Fire,Los Angeles,93.33333333333333
+Bitter Fire,San Luis Obispo,46.666666666666664
+Olivas Fire,Ventura,60.0
+Horse Fire,Lassen,53.333333333333336
+Johnson Fire ,Riverside,66.66666666666667
+Fairmont Fire,San Diego,46.666666666666664
+Real Fire,Santa Barbara,86.66666666666667
+Mud Fire ,Fresno,60.0
+Beaumont Fire,San Bernardino,46.666666666666664
+Palisades Fire,Los Angeles,60.0
+Kincade Fire,Sonoma,93.33333333333333
+Nelson Fire ,Butte,53.333333333333336
+Cabrillo Fire,San Mateo,53.333333333333336
+Mines Fire,Alameda,46.666666666666664
 Sawday Fire ,San Diego,53.333333333333336
-Miller Fire,San Diego,53.333333333333336
-Rawson Fire,Tehama,80.0
-Cypress Complex,Contra Costa,93.33333333333333
-Sky Fire ,Contra Costa,46.666666666666664
-Glencove Fire ,Solano,80.0
-Burris Fire,Mendocino,86.66666666666667
+Miller Fire,San Diego,66.66666666666667
+Rawson Fire,Tehama,66.66666666666667
+Cypress Complex,Contra Costa,60.0
+Sky Fire ,Contra Costa,60.0
+Glencove Fire ,Solano,60.0
+Burris Fire,Mendocino,80.0
 Forest Fire,Contra Costa,53.333333333333336
-Getty Fire ,Los Angeles,66.66666666666667
-Easy Fire,Ventura,93.33333333333333
-Hill Fire ,Riverside,86.66666666666667
+Getty Fire ,Los Angeles,80.0
+Easy Fire,Ventura,80.0
+Hill Fire ,Riverside,73.33333333333333
 46 Fire,Riverside,73.33333333333333
-Hillside Fire,San Bernardino,53.333333333333336
-Maria Fire ,Ventura,73.33333333333333
-Sobrante Fire ,Riverside,93.33333333333333
-Ranch Fire,Tehama,86.66666666666667
-Eagle Fire,Lake,46.666666666666664
-Cave Fire (No Longer a CAL FIRE Incident),Santa Barbara,86.66666666666667
-Antelope Fire,Sierra,100.0
-Beegum Fire,Tehama,80.0
-Wood Fire,Lassen,100.0
-Baseball Fire,Glenn,80.0
-Baseball Fire,Mendocino,80.0
-Grizzly Fire,Glenn,60.0
-Carter Fire ,Imperial,53.333333333333336
-Red Fire ,Tehama,93.33333333333333
-Byron Fire,Contra Costa,80.0
-Interstate 5 Fire,Kings,80.0
-Hollister Fire,Santa Barbara,46.666666666666664
-Candy Fire,Butte,80.0
-Gilman Fire,Riverside,80.0
-Spanish Fire ,Napa,86.66666666666667
+Hillside Fire,San Bernardino,80.0
+Maria Fire ,Ventura,93.33333333333333
+Sobrante Fire ,Riverside,46.666666666666664
+Ranch Fire,Tehama,80.0
+Eagle Fire,Lake,53.333333333333336
+Cave Fire (No Longer a CAL FIRE Incident),Santa Barbara,80.0
+Antelope Fire,Sierra,53.333333333333336
+Beegum Fire,Tehama,53.333333333333336
+Wood Fire,Lassen,53.333333333333336
+Baseball Fire,Glenn,66.66666666666667
+Baseball Fire,Mendocino,66.66666666666667
+Grizzly Fire,Glenn,66.66666666666667
+Carter Fire ,Imperial,66.66666666666667
+Red Fire ,Tehama,46.666666666666664
+Byron Fire,Contra Costa,53.333333333333336
+Interstate 5 Fire,Kings,66.66666666666667
+Hollister Fire,Santa Barbara,80.0
+Candy Fire,Butte,46.666666666666664
+Gilman Fire,Riverside,46.666666666666664
+Spanish Fire ,Napa,46.666666666666664
 Range Fire,San Luis Obispo,73.33333333333333
-Harley Fire,Riverside,93.33333333333333
-Horn Fire ,Lassen,60.0
-Smoketree Fire,Riverside,80.0
-Wildlife Fire,Solano,60.0
-Brock Fire,Shasta,86.66666666666667
-Colleen Fire,Santa Clara,60.0
-Karchner Fire,Placer,73.33333333333333
-Lakeville Fire,Sonoma,46.666666666666664
-McGary Fire ,Solano,80.0
-Gulch Fire,Sonoma,53.333333333333336
-Quail Fire,Solano,73.33333333333333
-Willow Fire ,Contra Costa,73.33333333333333
-Hunters Fire,Mariposa,80.0
-Sperry Fire,Stanislaus,86.66666666666667
-Grand Fire,Riverside,93.33333333333333
-Bradley Fire ,Monterey,73.33333333333333
-Sierra Fire,Riverside,60.0
-Oak Fire,Riverside,93.33333333333333
-Vineyard Fire ,Mendocino,66.66666666666667
-India Fire,San Diego,60.0
+Harley Fire,Riverside,53.333333333333336
+Horn Fire ,Lassen,53.333333333333336
+Smoketree Fire,Riverside,66.66666666666667
+Wildlife Fire,Solano,66.66666666666667
+Brock Fire,Shasta,46.666666666666664
+Colleen Fire,Santa Clara,66.66666666666667
+Karchner Fire,Placer,53.333333333333336
+Lakeville Fire,Sonoma,60.0
+McGary Fire ,Solano,53.333333333333336
+Gulch Fire,Sonoma,80.0
+Quail Fire,Solano,93.33333333333333
+Willow Fire ,Contra Costa,53.333333333333336
+Hunters Fire,Mariposa,53.333333333333336
+Sperry Fire,Stanislaus,53.333333333333336
+Grand Fire,Riverside,46.666666666666664
+Bradley Fire ,Monterey,60.0
+Sierra Fire,Riverside,53.333333333333336
+Oak Fire,Riverside,46.666666666666664
+Vineyard Fire ,Mendocino,60.0
+India Fire,San Diego,80.0
 Elizabeth Fire,Ventura,86.66666666666667
-Soda Fire,San Luis Obispo,86.66666666666667
+Soda Fire,San Luis Obispo,66.66666666666667
 Lime Fire,Ventura,80.0
-Skyline Fire,San Diego,93.33333333333333
-Border 7 Fire,San Diego,93.33333333333333
-Watt Fire,Placer,73.33333333333333
-Grant Fire,Sacramento,46.666666666666664
+Skyline Fire,San Diego,53.333333333333336
+Border 7 Fire,San Diego,73.33333333333333
+Watt Fire,Placer,53.333333333333336
+Grant Fire,Sacramento,93.33333333333333
 Hog Fire,Fresno,80.0
 Cornetts Fire,Mariposa,66.66666666666667
-Dawson Fire ,Riverside,86.66666666666667
-Hopland Fire,Mendocino,86.66666666666667
-Avila Fire,San Luis Obispo,93.33333333333333
-Bitter Fire ,San Benito,66.66666666666667
-Riata Fire ,San Luis Obispo,66.66666666666667
-Walker Fire,Calaveras,86.66666666666667
-Nelson Fire ,Butte,93.33333333333333
-Liberty Fire,San Joaquin,93.33333333333333
-Ridge Fire,Monterey,93.33333333333333
+Dawson Fire ,Riverside,46.666666666666664
+Hopland Fire,Mendocino,46.666666666666664
+Avila Fire,San Luis Obispo,86.66666666666667
+Bitter Fire ,San Benito,80.0
+Riata Fire ,San Luis Obispo,46.666666666666664
+Walker Fire,Calaveras,93.33333333333333
+Nelson Fire ,Butte,53.333333333333336
+Liberty Fire,San Joaquin,53.333333333333336
+Ridge Fire,Monterey,60.0
 Baker Fire,Kern,60.0
-Nelson Fire,Placer,66.66666666666667
-Fork Fire,Tulare,46.666666666666664
+Nelson Fire,Placer,60.0
+Fork Fire,Tulare,73.33333333333333
 Teddy Fire,Butte,46.666666666666664
-Springs Fire,Tulare,46.666666666666664
-Honcut Fire,Butte,73.33333333333333
-Quarter Fire,Tuolumne,46.666666666666664
-Hunter Fire,Monterey,73.33333333333333
-Stage Fire,Monterey,66.66666666666667
-Grade Fire ,Tulare,100.0
-Rico Fire ,Monterey,100.0
-River Fire,San Luis Obispo,66.66666666666667
-Sycamore Fire,Fresno,66.66666666666667
-R-2 Fire,Lassen,86.66666666666667
+Springs Fire,Tulare,66.66666666666667
+Honcut Fire,Butte,53.333333333333336
+Quarter Fire,Tuolumne,66.66666666666667
+Hunter Fire,Monterey,80.0
+Stage Fire,Monterey,53.333333333333336
+Grade Fire ,Tulare,86.66666666666667
+Rico Fire ,Monterey,66.66666666666667
+River Fire,San Luis Obispo,46.666666666666664
+Sycamore Fire,Fresno,46.666666666666664
+R-2 Fire,Lassen,73.33333333333333
 R-3 Fire,Lassen,80.0
-58 Fire,Riverside,80.0
-Diablo Fire,Stanislaus,100.0
-Bend Fire,San Luis Obispo,80.0
-Aurora Fire,Mono,100.0
-Poeville Fire,State of Nevada,73.33333333333333
-Pass Fire,Merced,73.33333333333333
-Gage Fire,San Luis Obispo,53.333333333333336
-Muck Fire ,Lassen,80.0
-Avacado Fire,Butte,86.66666666666667
-Flat Fire,Trinity,73.33333333333333
-Bena Fire,Kern,100.0
+58 Fire,Riverside,46.666666666666664
+Diablo Fire,Stanislaus,60.0
+Bend Fire,San Luis Obispo,66.66666666666667
+Aurora Fire,Mono,80.0
+Poeville Fire,State of Nevada,86.66666666666667
+Pass Fire,Merced,86.66666666666667
+Gage Fire,San Luis Obispo,46.666666666666664
+Muck Fire ,Lassen,46.666666666666664
+Avacado Fire,Butte,66.66666666666667
+Flat Fire,Trinity,66.66666666666667
+Bena Fire,Kern,93.33333333333333
 Rowher Fire,Los Angeles,86.66666666666667
-Bonadelle Fire,Madera,86.66666666666667
-Soda Fire ,San Luis Obispo,86.66666666666667
+Bonadelle Fire,Madera,66.66666666666667
+Soda Fire ,San Luis Obispo,80.0
 Mount R Fire,San Bernardino,53.333333333333336
-Sheridan Fire,Alameda,86.66666666666667
-Park Fire,Santa Clara,53.333333333333336
+Sheridan Fire,Alameda,60.0
+Park Fire,Santa Clara,66.66666666666667
 Crews Fire,Santa Clara,93.33333333333333
-Soledad Fire,Los Angeles,80.0
-Patterson Fire,San Joaquin,93.33333333333333
-Mountain Meadow Fire ,Solano,86.66666666666667
-Nail Fire,Colusa,73.33333333333333
-Tripp Fire ,Riverside,93.33333333333333
-Alum Fire,Santa Clara,80.0
+Soledad Fire,Los Angeles,86.66666666666667
+Patterson Fire,San Joaquin,60.0
+Mountain Meadow Fire ,Solano,53.333333333333336
+Nail Fire,Colusa,60.0
+Tripp Fire ,Riverside,46.666666666666664
+Alum Fire,Santa Clara,46.666666666666664
 Power Fire,Madera,73.33333333333333
-Elliot Fire,Riverside,93.33333333333333
-Robinson Fire,Butte,53.333333333333336
-Casino Fire,Riverside,66.66666666666667
+Elliot Fire,Riverside,46.666666666666664
+Robinson Fire,Butte,60.0
+Casino Fire,Riverside,73.33333333333333
 Mineral Fire,Fresno,93.33333333333333
-Coyote Fire,San Benito,66.66666666666667
-Ben Fire,Mariposa,93.33333333333333
-Valley Fire ,Yuba,80.0
-Hollow Fire,Alameda,100.0
-Pitzer Fire,San Bernardino,86.66666666666667
-Badger Fire,Siskiyou,93.33333333333333
-Hog Fire,Lassen,93.33333333333333
-Platina Fire,Shasta,73.33333333333333
-Gold Fire,Lassen,66.66666666666667
-Milepost 21 Fire,Humboldt,80.0
-Feather Fire,Butte,93.33333333333333
-Holland Fire ,Contra Costa,66.66666666666667
-Easton Fire,San Bernardino,100.0
+Coyote Fire,San Benito,80.0
+Ben Fire,Mariposa,53.333333333333336
+Valley Fire ,Yuba,66.66666666666667
+Hollow Fire,Alameda,66.66666666666667
+Pitzer Fire,San Bernardino,73.33333333333333
+Badger Fire,Siskiyou,80.0
+Hog Fire,Lassen,100.0
+Platina Fire,Shasta,80.0
+Gold Fire,Lassen,93.33333333333333
+Milepost 21 Fire,Humboldt,66.66666666666667
+Feather Fire,Butte,46.666666666666664
+Holland Fire ,Contra Costa,53.333333333333336
+Easton Fire,San Bernardino,53.333333333333336
 Rabbit Fire ,Madera,60.0
-Iris Fire,Mono,93.33333333333333
-July Complex,Siskiyou,93.33333333333333
-July Complex,Modoc,60.0
-Jack Fire,Riverside,100.0
-Hill Fire,Colusa,80.0
-Karen Fire,Riverside,73.33333333333333
-Ione Fire ,Sacramento,93.33333333333333
-Ridge Fire,Los Angeles,100.0
-Lincoln Fire,Humboldt,80.0
-Branch Fire,San Luis Obispo,73.33333333333333
-Brook Fire,San Bernardino,46.666666666666664
-Clay Fire,Sacramento,100.0
-Rabbit Fire,Riverside,100.0
+Iris Fire,Mono,66.66666666666667
+July Complex,Siskiyou,100.0
+July Complex,Modoc,100.0
+Jack Fire,Riverside,60.0
+Hill Fire,Colusa,60.0
+Karen Fire,Riverside,66.66666666666667
+Ione Fire ,Sacramento,53.333333333333336
+Ridge Fire,Los Angeles,73.33333333333333
+Lincoln Fire,Humboldt,60.0
+Branch Fire,San Luis Obispo,93.33333333333333
+Brook Fire,San Bernardino,66.66666666666667
+Clay Fire,Sacramento,66.66666666666667
+Rabbit Fire,Riverside,60.0
 Dam Fire,Los Angeles,66.66666666666667
-Sheep Fire,Kern,93.33333333333333
-Stump Fire,Tehama,100.0
-Castaic Fire,Los Angeles,100.0
-Pond Fire,San Luis Obispo,53.333333333333336
-Sophia Fire,El Dorado,93.33333333333333
-Water Fire,Riverside,53.333333333333336
-North Fire,Lassen,73.33333333333333
-Sites Fire ,Colusa,100.0
-Post Fire,Los Angeles,93.33333333333333
-Beale Fire,Yuba,80.0
-Elsmere Fire,Los Angeles,80.0
-Stagecoach Fire,Kern,66.66666666666667
-Trimmer Fire,Fresno,60.0
-Pass Fire,San Luis Obispo,60.0
-Fort Fire,Kern,86.66666666666667
-Texas Fire,Los Angeles,100.0
-Mina Fire,Mendocino,100.0
-Duluth Fire,Placer,73.33333333333333
-R-1 Fire,Lassen,46.666666666666664
-Soda Fire,Kern,53.333333333333336
-Lake Fire,Los Angeles,46.666666666666664
-Carrizo Fire,San Luis Obispo,46.666666666666664
-Meiss Fire,Sacramento,100.0
-Ranch 2 Fire,Los Angeles,100.0
-Clark Fire,Butte,86.66666666666667
-Loyalton Fire,Sierra,80.0
-Whale Fire,San Luis Obispo,93.33333333333333
+Sheep Fire,Kern,60.0
+Stump Fire,Tehama,80.0
+Castaic Fire,Los Angeles,73.33333333333333
+Pond Fire,San Luis Obispo,80.0
+Sophia Fire,El Dorado,53.333333333333336
+Water Fire,Riverside,66.66666666666667
+North Fire,Lassen,93.33333333333333
+Sites Fire ,Colusa,73.33333333333333
+Post Fire,Los Angeles,80.0
+Beale Fire,Yuba,66.66666666666667
+Elsmere Fire,Los Angeles,66.66666666666667
+Stagecoach Fire,Kern,93.33333333333333
+Trimmer Fire,Fresno,73.33333333333333
+Pass Fire,San Luis Obispo,66.66666666666667
+Fort Fire,Kern,60.0
+Texas Fire,Los Angeles,73.33333333333333
+Mina Fire,Mendocino,80.0
+Duluth Fire,Placer,53.333333333333336
+R-1 Fire,Lassen,66.66666666666667
+Soda Fire,Kern,66.66666666666667
+Lake Fire,Los Angeles,100.0
+Carrizo Fire,San Luis Obispo,60.0
+Meiss Fire,Sacramento,66.66666666666667
+Ranch 2 Fire,Los Angeles,93.33333333333333
+Clark Fire,Butte,60.0
+Loyalton Fire,Sierra,93.33333333333333
+Whale Fire,San Luis Obispo,86.66666666666667
 3-2 Fire,San Luis Obispo,46.666666666666664
-Elk Fire,Glenn,100.0
-August Complex (includes Doe Fire),Mendocino,93.33333333333333
-August Complex (includes Doe Fire),Humboldt,80.0
-August Complex (includes Doe Fire),Trinity,60.0
-Valley Fire,San Diego,100.0
-Oak Fire,Mendocino,100.0
-Willow Fire,Yuba,100.0
-Sperry Fire,Stanislaus,100.0
-Schoolhouse Fire,Siskiyou,80.0
-Shackleford Fire,Siskiyou,53.333333333333336
-Bullfrog Fire,Fresno,100.0
-Fox Fire,Siskiyou,93.33333333333333
-San Antonio Fire ,Santa Barbara,100.0
-Glass Fire,Napa,73.33333333333333
-Glass Fire,Sonoma,80.0
-Zogg Fire,Shasta,53.333333333333336
+Elk Fire,Glenn,66.66666666666667
+August Complex (includes Doe Fire),Mendocino,100.0
+August Complex (includes Doe Fire),Humboldt,100.0
+August Complex (includes Doe Fire),Trinity,100.0
+August Complex (includes Doe Fire),Tehama,100.0
+August Complex (includes Doe Fire),Glenn,100.0
+August Complex (includes Doe Fire),Lake,100.0
+August Complex (includes Doe Fire),Colusa,100.0
+Jones Fire,Nevada,80.0
+4-8 Fire,Glenn,80.0
+Murphy Fire,El Dorado,60.0
+CZU Lightning Complex (Including Warnella Fire) ,Santa Cruz,100.0
+CZU Lightning Complex (Including Warnella Fire) ,San Mateo,100.0
+SCU Lightning Complex,Santa Clara,100.0
+SCU Lightning Complex,Alameda,100.0
+SCU Lightning Complex,Contra Costa,100.0
+SCU Lightning Complex,San Joaquin,100.0
+SCU Lightning Complex,Stanislaus,100.0
+3-19 Fire,Mendocino,53.333333333333336
+Creek Fire,Mendocino,73.33333333333333
+"LNU Lightning Complex (includes Hennessey, Gamble, 15-10, Spanish, Markley, 13-4, 11-16, Walbridge)",Napa,100.0
+"LNU Lightning Complex (includes Hennessey, Gamble, 15-10, Spanish, Markley, 13-4, 11-16, Walbridge)",Sonoma,100.0
+"LNU Lightning Complex (includes Hennessey, Gamble, 15-10, Spanish, Markley, 13-4, 11-16, Walbridge)",Lake,100.0
+"LNU Lightning Complex (includes Hennessey, Gamble, 15-10, Spanish, Markley, 13-4, 11-16, Walbridge)",Yolo,100.0
+"LNU Lightning Complex (includes Hennessey, Gamble, 15-10, Spanish, Markley, 13-4, 11-16, Walbridge)",Solano,100.0
+Butte/Tehama/Glenn Lightning Complex (Tehama/Glenn Zone) ,Tehama,100.0
+Butte/Tehama/Glenn Lightning Complex (Tehama/Glenn Zone) ,Glenn,100.0
+Flint Fire,Calaveras,53.333333333333336
+Moc Fire,Tuolumne,80.0
+Volcano Fire,San Diego,66.66666666666667
+Coyote Fire,Santa Clara,66.66666666666667
+Sheep Fire ,Plumas,93.33333333333333
+Woodward Fire,Marin,93.33333333333333
+R-8 Pinecone Fire ,Lassen,80.0
+Johnson Fire ,Los Angeles,86.66666666666667
+Hensley Fire ,Madera,66.66666666666667
+Catholic Fire,Lake,46.666666666666664
+El Dorado Fire,San Bernardino,100.0
+El Dorado Fire,Riverside,100.0
+Valley Fire,San Diego,93.33333333333333
+Oak Fire,Mendocino,80.0
+Willow Fire,Yuba,80.0
+Sperry Fire,Stanislaus,53.333333333333336
+Schoolhouse Fire,Siskiyou,60.0
+Shackleford Fire,Siskiyou,60.0
+Bullfrog Fire,Fresno,80.0
+Fox Fire,Siskiyou,80.0
+San Antonio Fire ,Santa Barbara,80.0
+Glass Fire,Napa,93.33333333333333
+Glass Fire,Sonoma,93.33333333333333
+Zogg Fire,Shasta,93.33333333333333
 Zogg Fire,Tehama,93.33333333333333
-Martindale Fire ,Los Angeles,60.0
-Candy Fire,Riverside,53.333333333333336
-Copper Fire ,Amador,73.33333333333333
-Pony Fire,Sacramento,53.333333333333336
-Lambert Fire,Amador,93.33333333333333
-Fields Fire ,Yuba,73.33333333333333
-Irvine Fire,Contra Costa,100.0
-Diamond Fire,Calaveras,100.0
-Bruder Fire,San Bernardino,93.33333333333333
-Cameron Fire,El Dorado,93.33333333333333
-Ferry Fire,Butte,80.0
+Martindale Fire ,Los Angeles,80.0
+Candy Fire,Riverside,60.0
+Copper Fire ,Amador,53.333333333333336
+Pony Fire,Sacramento,46.666666666666664
+Lambert Fire,Amador,60.0
+Fields Fire ,Yuba,53.333333333333336
+Irvine Fire,Contra Costa,46.666666666666664
+Diamond Fire,Calaveras,60.0
+Bruder Fire,San Bernardino,60.0
+Cameron Fire,El Dorado,46.666666666666664
+Ferry Fire,Butte,46.666666666666664
 Pope Fire,Napa,66.66666666666667
-Olinda Fire,Shasta,100.0
-Silverado Fire ,Orange,73.33333333333333
+Olinda Fire,Shasta,46.666666666666664
+Silverado Fire ,Orange,93.33333333333333
 Blue Ridge Fire ,Orange,93.33333333333333
-San Dimas Fire,Los Angeles,66.66666666666667
-Airport Fire,Riverside,73.33333333333333
-Bond Fire,Orange,46.666666666666664
-Thomas Fire,Lassen,86.66666666666667
-Sanderson Fire,Riverside,60.0
+San Dimas Fire,Los Angeles,60.0
+Airport Fire,Riverside,80.0
+Bond Fire,Orange,93.33333333333333
+Thomas Fire,Lassen,46.666666666666664
+Sanderson Fire,Riverside,66.66666666666667
 Erbes Fire,Ventura,60.0
-72 Fire,Riverside,66.66666666666667
+72 Fire,Riverside,53.333333333333336
+Panther Ridge Fire,Santa Cruz,46.666666666666664
+Freedom Fire,Santa Cruz,53.333333333333336
