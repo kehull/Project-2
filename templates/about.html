@@ -11,7 +11,22 @@
   <link rel="stylesheet" type="text/css" href="../static/css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
+  <link rel="stylesheet" href="static\css\customstyle.css" />
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+        integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="" />
+
+    <!-- Fotorama-->
+    <!-- jQuery 1.8 or later, 33 KB -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Fotorama from CDNJS, 19 KB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
+
 </head>
 
 <body>
@@ -25,17 +40,15 @@
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="/">Home</a>
+                    <a href="https://california-disasters.herokuapp.com/">Home</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="https://california-disasters.herokuapp.com/about">About</a>
                 </li>
                 <li>
-                    <a href="api-documentation">API</a>
+                    <a href="https://california-disasters.herokuapp.com/api-documentation">API</a>
                 </li>
             </ul>
-<<<<<<< Updated upstream
-=======
 
                             <!-- Add images to <div class="fotorama"></div> -->
                             <div class="fheading"><br>
@@ -73,27 +86,73 @@
                                                 src="headshots\kelly.jpg" style="width:100%"></a>
                                     </div>
                                 </div>
->>>>>>> Stashed changes
         
-            <div id="content">
+        </nav>
 
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
-                    <i class="fas fa-align-left"></i>
-                    <span>Toggle Sidebar</span>
-                </button>
-                <div class="heading">
-                    <h1>API Documentation</h1>
-                </div>
-                <div class="line"></div>
+        <!-- Page Content -->
+        <div id="content">
+
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+                <span>Toggle Sidebar</span>
+            </button>
+            <div class="heading">
+                <h1>Finding Safe Harbor in California</h1>
+            </div>
+            <div class="line"></div>
+
+            <p>
+                <strong>test test</strong><br>
+                test test
+            </p>
+
+
+            
+
+        </div>
+
+       
+
+    </div>
+
+    <h1>California Disasters</h1>
+
+
+
     
-                <p>
-                    California is one of the biggest and most populous states in the entire US. But just how safe is it to
-                    live and work there?
-                </p>
-                <p>
-                    By looking at the number and size of earthquakes and wildfires- two of California's most common national
-                    disasters- as well as the counties in which
-                    these disasters take place and the frequency with which those counties experience wildfires and
-                    earthquakes, we can determine which counties are the
-                    safest and most dangerous.
-                </p>
+    
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+
+    <!-- jQuery Custom Scroller CDN -->
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+   
+
+
+    <!-- Sidebar Formatting -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar, #content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
